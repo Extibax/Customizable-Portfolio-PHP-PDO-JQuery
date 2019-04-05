@@ -1,0 +1,13 @@
+CREATE DATABASE IF NOT EXISTS eam_consultores CHARACTER SET utf8 COLLATE utf8_unicode_ci;
+
+USE eam_consultores;
+
+CREATE TABLE IF NOT EXISTS users(
+  ID          INT(5) AUTO_INCREMENT NOT NULL,
+  First_name  VARCHAR(100) NOT NULL,
+  Last_name   VARCHAR(100),
+  Email       VARCHAR(100) NOT NULL,
+  Password    TEXT NOT NULL,
+  Date        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  CONSTRAINT pk_users PRIMARY KEY(ID)
+);

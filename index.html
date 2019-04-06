@@ -9,36 +9,229 @@
     <link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Link FontAwesome -->
-    <link rel="stylesheet" href="lib/fontawesome.css"
+    <!-- <link rel="stylesheet" href="lib/fontawesome.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="style/syle.css">
 
-    <title>Document</title>
+    <title>EAM Consultores</title>
 </head>
 
 <body>
-
-    <div class="container">
+    <div class="background-overlay"></div>
+    <div class="content">
         <header>
-            <div class="nav nav-dark bg-dark px-2">
-                <div class="navbar-brand">
-                    <a class="text-white" href="#">EAM Consultores</a>
+            <div class="menu-toggler">
+                <div class="bar half start">
+
+                </div>
+                <div class="bar">
+
+                </div>
+                <div class="bar half end">
+
                 </div>
             </div>
+            <nav class="top-nav">
+                <ul class="nav-list">
+                    <li>
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#portfolio">Portfolio</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="landing-text">
+                <h1>
+                    EAM<br><span class="red">Consultores</span>
+                </h1>
+                <h6>Contabilidad | Administracion | Reclutamiento</h6>
+            </div>
         </header>
+
+        <section class="about" id="about">
+            <div class="container">
+                <div class="profile-img">
+                    <img src="img/profile.jpeg" alt="EAM Profile Img">
+                </div>
+                <div class="about-details">
+                    <div class="about-heading">
+                        <h1>Acerca de</h1>
+                        <h6>EAM Consultores</h6>
+                    </div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ea repellat illo. Ut quos dolores
+                        quam
+                        ullam qui natus deleniti optio quis, accusantium voluptatibus. Pariatur eum dolores explicabo
+                        hic.
+                        Dignissimos? accusantium voluptatibus. Pariatur eum dolores explicabo hic.
+                    </p>
+                    <div class="social-media">
+                        <div class="nav-list">
+                            <li>
+                                <a href="#" class="icon-link">
+                                    <i class="fab fa-facebook-square"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon-link">
+                                    <i class="fab fa-instagram"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="icon-link">
+                                    <i class="fab fa-whatsapp"></i>
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-heading">
+                    <h1>Servicios</h1>
+                    <h6>¿Que podemos hacer por tu empresa?</h6>
+                </div>
+                <div class="my-skills">
+                    <div class="skill">
+                        <div class="icon-container">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h1>Contabilidad</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                    <div class="skill">
+                        <div class="icon-container">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h1>Administracion</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                    <div class="skill">
+                        <div class="icon-container">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h1>Reclutamiento</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="portfolio" id="portfolio">
+            <div class="container">
+                <div class="section-heading">
+                    <h1>Portafolio</h1>
+                    <h6>Mira algo sobre nuestro recientes trabajos</h6>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img has-margin-right">
+                        <img src="img/portitem1.jpeg" alt="">
+                    </div>
+                    <div class="portfolio-description">
+                        <h6>Contabilidad</h6>
+                        <h1>Smartmatic</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <a href="#" class="cta">Mas Info</a>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-description has-margin-right">
+                        <h6>Contabilidad</h6>
+                        <h1>Smartmatic</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <a href="#" class="cta">Mas Info</a>
+                    </div>
+                    <div class="portfolio-img">
+                        <img src="img/portitem2.jpeg" alt="">
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-img has-margin-right">
+                        <img src="img/portitem3.jpeg" alt="">
+                    </div>
+                    <div class="portfolio-description">
+                        <h6>Contabilidad</h6>
+                        <h1>Smartmatic</h1>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                        <a href="#" class="cta">Mas Info</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <div class="container">
+                <div class="section-heading">
+                    <h1>Contacto</h1>
+                    <h6>Vamos a trabajar juntos!</h6>
+                </div>
+                <form action="#">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" placeholder="Enter your name:" required>
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="Enter your email:" required>
+                    <label for="services">Service:</label>
+                    <select name="services" id="select-services">
+                        <option value="contabilidad">Contabilidad</option>
+                        <option value="administracion">Administracion</option>
+                        <option value="reclutamiento">Reclutamiento</option>
+                    </select>
+                    <label for="textarea-message">Mensaje:</label>
+                    <textarea name="textare-message" id="textarea-message" cols="10" rows="10"></textarea>
+                    <input type="submit" value="Enviar">
+                </form>
+            </div>
+        </section>
+
+        <footer class="copyright">
+            <div class="up" id="up">
+                <i class="fas fa-chevron-up"></i>
+            </div>
+            <p>
+                &copy; 2019 EAM Consultores
+            </p>
+        </footer>
     </div>
 
-
-    <!-- Script JQuery 3.3.1 -->
-    <script src="lib/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
-    <!-- Script PopperJs 1.14.7 -->
-    <script src="lib/bootstrap/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <!-- Script BootstrapJs 4.3.1 -->
-    <script src="lib/bootstrap/popper.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+    <!-- Script JQuery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- Script App -->
+    <script src="js/App.js"></script>
 </body>
 
 </html>

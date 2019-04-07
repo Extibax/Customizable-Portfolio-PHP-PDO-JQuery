@@ -24,31 +24,9 @@ body {
     font-family: 'Roboto', sans-serif;
     width: 100%;
     height: 100%;
-    background-color: black;
-}
-
-.background-overlay {
-    position: fixed;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background: url('../img/background-black-blank-733857.jpg')
+    background: url('../img/EamBlurBg.jpg')
     no-repeat center fixed;
     background-size: cover;
-    filter: blur(5px);
-    -webkit-filter: blur(5px);
-}
-
-.content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 100%;
-    height: 100%;
 }
 
 section {
@@ -141,9 +119,7 @@ header {
     position: fixed;
     top: -100vh;
     z-index: 50;
-    background-color: rgba(0, 0, 0, .95);
-    /* background-color: #000000; */
-    /* background: rgba(0, 0, 0, .9); */
+    background-color: rgba(0, 0, 0, 1);
     border-bottom-right-radius: 100%;
     border-bottom-left-radius: 100%;
     transition: all 650ms cubic-bezier(1, 0, 0, 1);
@@ -179,7 +155,7 @@ li {
 }
 
 .menu-toggler {
-    position: absolute;
+    position: fixed;
     top: 5rem;
     right: 5rem;
     width: 5rem;
@@ -189,7 +165,11 @@ li {
     justify-content: space-between;
     cursor: pointer;
     z-index: 1500;
-    transition: transform 650ms ease-out;
+    /* transition: transform 650ms ease-out; */
+}
+
+.sticky {
+    position: fixed;
 }
 
 .menu-toggler.open {
@@ -254,6 +234,32 @@ li {
     /* font-weight: 300; */
 }
 
+.btn-black {
+    margin-top: 3rem;
+    padding: 1rem;
+    font-size: 1.5rem;
+    border: 1px solid #000;
+    transition: background-color 1s ease-in-out;
+    transition: color 650ms ease-in-out;
+    cursor: pointer;
+}
+
+.btn-black:hover {
+    color: #FFF !important;
+    background-color: #000 !important;
+}
+
+.landing-text .start-button a {
+    text-decoration: none;
+    color: #000;
+}
+
+.landing-text .start-button a:hover,
+.landing-text .start-button a:focus {
+    color: #FFF;
+    background: #000;
+}
+
 .red {
     color: rgb(223, 4, 4);
 }
@@ -287,13 +293,19 @@ li {
 }
 
 .about-heading h6 {
+    font-weight: 300;
     font-size: 2rem;
+}
+
+.about-details p {
+    font-weight: 300;
 }
 
 .profile-img {
     flex: 1;
     margin-right: 5rem;
-    border: 1px solid rgba(0, 0, 0, .5);
+    box-shadow: 5px 10px 25px #000;
+    border-radius: 6px;
 }
 
 .about-details {
@@ -348,6 +360,10 @@ li {
     margin: 2rem 0 2rem 0;
 }
 
+.skill p {
+    font-weight: 300;
+}
+
 .icon-container {
     width: 10rem;
     height: 10rem;
@@ -373,7 +389,7 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 5rem;
+    margin-bottom: 4rem;
 }
 
 .portfolio-img {
@@ -389,14 +405,16 @@ li {
 
 .portfolio-description h6 {
     font-size: 3rem;
-    font-weight: 300;
     margin: 1rem 0;
+}
+
+.portfolio-description p {
+    font-weight: 300;
 }
 
 .portfolio-description h1 {
     font-size: 1.5rem;
     text-transform: uppercase;
-    font-weight: 300;
     opacity: 0.8;
 }
 
@@ -418,8 +436,7 @@ li {
 /* Start contact */
 
 .contact {
-    background-color: #EEE;
-    border-top: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: #ebe8e9;
 }
 
 form {
@@ -514,5 +531,122 @@ footer p {
 
     100% {
         box-shadow: 0 0 0 0 rgba(91, 124, 27, 0);
+    }
+}
+
+/* End animations */
+
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+    
+    .landing-text h1 {
+        font-size: 8rem;
+    }
+
+    .landing-text h6 {
+        font-size: 1.5rem;
+    }
+
+    .nav-list {
+        flex-direction: column;
+    }
+
+    li {
+        margin: 2rem 0;
+    }
+
+    .nav-link {
+        font-size: 4rem;
+    }
+
+    .about-heading h1 {
+        font-size: 8rem;
+    }
+
+    .section-heading h1 {
+        font-size: 3rem;
+    }
+
+    .about-details .nav-list {
+        flex-direction: initial;
+    }
+
+    .about-details li {
+        margin: 0 2rem;
+    }
+
+    .icon-container {
+        width: 7rem;
+        height: 7rem;
+    }
+
+    .icon-container i {
+        font-size: 4rem;
+    }
+
+}
+
+@media screen and (max-width: 600px) {
+
+    .menu-toggler {
+        top: 2rem;
+        right: 2rem;
+    }
+
+    .nav-link {
+        font-size: 2rem;
+    }
+
+    .landing-text h1 {
+        font-size: 5rem;
+    }
+
+    .landing-text h6 {
+        font-size: 1.5rem;
+    }
+
+    .about .container {
+        flex-direction: column;
+    }
+
+    .about-heading h1 {
+        font-size: 5rem;
+    }
+
+    .profile-img {
+        margin: 0 0 7rem 0;
+    }
+    
+    .profile-img img {
+        width: 90vw;
+    }
+
+    .portfolio-item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .portfolio-img {
+        margin: 0 0 2rem 0;
+        order: 1;
+        width: 90vw;
+    }
+
+    .portfolio-img img {
+        width: 90vw;
+    }
+
+    .portfolio-description {
+        margin: 0;
+        order: 2;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    .up {
+        right: 2rem;
     }
 }

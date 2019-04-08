@@ -2,5 +2,8 @@
     "require": {
         "vlucas/phpdotenv": "^3.3",
         "phpmailer/phpmailer": "^6.0"
+    },
+    "require-dev": {
+        "squizlabs/php_codesniffer": "^3.4"
     }
 }

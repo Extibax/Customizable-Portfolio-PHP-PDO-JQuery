@@ -72,7 +72,7 @@ switch ($_GET['section']) {
             echo $stmt->execute() ? "1" : $stmt->errorInfo();
         }
         break;
-
+        /* Porfolio Section */
     case 'portfolio':
         if (isset($_POST)) {
 
@@ -80,6 +80,7 @@ switch ($_GET['section']) {
             $second_port_title = !empty($_POST['second_port_title']) ? $_POST['second_port_title'] : false;
             $third_port_title = !empty($_POST['third_port_title']) ? $_POST['third_port_title'] : false;
 
+            /* Return */
             /* Packed titles */
             $portfolio_titles = json_encode(array(
                 "F_title" => $first_port_title,
@@ -87,12 +88,11 @@ switch ($_GET['section']) {
                 "T_title" => $third_port_title
             ));
 
-            var_dump($portfolio_titles);
-
             $first_port_subtitle = !empty($_POST['first_port_subtitle']) ? $_POST['first_port_subtitle'] : false;
             $sec_port_subtitle = !empty($_POST['sec_port_subtitle']) ? $_POST['sec_port_subtitle'] : false;
             $third_port_subtitle = !empty($_POST['third_port_subtitle']) ? $_POST['third_port_subtitle'] : false;
 
+            /* Return */
             /* Packed subtitles */
             $portfolio_subtitles = json_encode(array(
                 "F_sub" => $first_port_subtitle,
@@ -100,11 +100,10 @@ switch ($_GET['section']) {
                 "T_sub" => $third_port_subtitle,
             ));
 
-            var_dump($portfolio_subtitles);
-
             $first_port_description = !empty($_POST['first_port_description']) ? $_POST['first_port_description'] : false;
             $sec_port_description = !empty($_POST['sec_port_description']) ? $_POST['sec_port_description'] : false;
             $third_port_description = !empty($_POST['third_port_description']) ? $_POST['third_port_description'] : false;
+
 
             /* Packed descriptions */
             $portfolio_descriptions = json_encode(array(
@@ -128,11 +127,17 @@ switch ($_GET['section']) {
             $portfolio_file_image_2 = !empty($_FILES['portfolio_image_2']) ? $_FILES['portfolio_image_2'] : false;
             $portfolio_file_image_3 = !empty($_FILES['portfolio_image_3']) ? $_FILES['portfolio_image_3'] : false;
 
+            if ($portfolio_file_image_1) {
+                echo "True";
+            } else {
+                echo "False";
+            }
+
             $portfolio_file_image_1 ? $portfolio_image_1 = file_get_contents($portfolio_file_image_1['tmp_name']) : false;
             $portfolio_file_image_2 ? $portfolio_image_2 = file_get_contents($portfolio_file_image_2['tmp_name']) : false;
             $portfolio_file_image_3 ? $portfolio_image_3 = file_get_contents($portfolio_file_image_3['tmp_name']) : false;
 
-            $query = "UPDATE content SET portfolio_titles = ?, portfolio_subtitles = ?, portfolio_descriptions = ?, portfolio_links = ? ";
+            $query = "UPDATE content SET portfolio_titles = ?, portfolio_subtitles = ?, portfolio_descriptions = ?, portfolio_links = ?  ";
 
             $query .= $portfolio_image_1 ? ",portfolio_image_1 = :img_1 " : "";
             $query .= $portfolio_image_2 ? ",portfolio_image_2 = :img_2 " : "";
@@ -142,26 +147,20 @@ switch ($_GET['section']) {
             $query .= $portfolio_image_2 ? ",portfolio_image_type_2 = :img_type_2 " : "";
             $query .= $portfolio_image_3 ? ",portfolio_image_type_3 = :img_type_3 " : "";
 
+            $query .= "WHERE ID = 1;";
+            echo $query;
+            $stmt = $dbh->prepare($query);
 
-            /* print $query;
-            var_dump($query); */
+            $stmt->bindValue(1, $portfolio_titles);
+            $stmt->bindValue(2, $portfolio_subtitles);
+            $stmt->bindValue(3, $portfolio_descriptions);
+            $stmt->bindValue(4, $portfolio_links);
 
-            $newQuery = rtrim($query, ',');
+            strpos($query, "portfolio_image_1") ? $stmt->bindValue(":img_1", $portfolio_image_1) : "";
 
-            echo $newQuery();
+            strpos($query, "portfolio_image_2") ? $stmt->bindValue(":img_2", $portfolio_image_2) : "";
 
-            $stms = $dbh->prepare($newQuery);
-
-            $stms->bindValue(1, $portfolio_titles);
-            $stms->bindValue(2, $portfolio_subtitles);
-            $stms->bindValue(3, $portfolio_descriptions);
-            $stms->bindValue(4, $portfolio_links);
-
-            strpos($query, "portfolio_image_1") ? $stms->bindValue(":img_1", $portfolio_image_1) : "";
-
-            strpos($query, "portfolio_image_2") ? $stms->bindValue(":img_2", $portfolio_image_2) : "";
-
-            strpos($query, "portfolio_image_3") ? $stms->bindValue(":img_3", $portfolio_image_3) : "";
+            strpos($query, "portfolio_image_3") ? $stmt->bindValue(":img_3", $portfolio_image_3) : "";
 
             if (strpos($query, "portfolio_image_type_1")) {
                 $portfolio_image_type_1 = json_encode(array(
@@ -188,8 +187,9 @@ switch ($_GET['section']) {
                 $stmt->bindValue(":img_type_3", $portfolio_image_type_3);
             }
 
+            $stmt->execute();
 
-            echo $stmt->execute() ? (strpos($query, 'portfolio_image') ? "01" : "1") : "0";
+            /* echo $stmt->execute() ? (strpos($query, 'portfolio_image') ? "01" : "1") : "0"; */
         }
         break;
     default:

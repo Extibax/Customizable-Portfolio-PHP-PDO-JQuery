@@ -9,3 +9,12 @@ body {
 a {
     cursor: pointer !important;
 }
+
+.green {
+    color: #5b7c1b;
+}
+
+.img-fluid {
+    width: 100%;
+    height: 100%;
+}

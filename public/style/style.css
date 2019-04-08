@@ -551,6 +551,12 @@ input[type="submit"]:hover {
 
 /* Media Queries */
 
+@media screen and (max-width: 900px) {
+    .nav-link {
+        font-size: 2rem;
+    }
+}
+
 @media screen and (max-width: 768px) {
     
     .landing-text h1 {

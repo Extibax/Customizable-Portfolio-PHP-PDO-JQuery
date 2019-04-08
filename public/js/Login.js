@@ -1,6 +1,14 @@
-$(document).ready(function() {
+$(document).ready(function () {
 
-    $('#btn-login').on('click', function(e) {
+    $.get('../php/login.php', function (res) {
+        if (res == 1) {
+            window.location = '../views/admin_view.html';
+        } else {
+            console.log("Please login");
+        }
+    });
+
+    $('#btn-login').on('click', function (e) {
         e.preventDefault();
 
         let login_data = {
@@ -8,12 +16,13 @@ $(document).ready(function() {
             Password: $('#input-password').val()
         }
 
-        $.post('../php/login.php', login_data, function(res) {
+        $.post('../php/login.php', login_data, function (res) {
             if (res == 1) {
                 window.location = '../views/admin_view.html';
             } else {
-                console.log('Error al iniciar sesion');
+                console.log('Error al iniciar sesion: ' + res);
             }
         });
     });
+
 });

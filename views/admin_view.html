@@ -8,6 +8,10 @@
     <!-- Link Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Link Alertify Styles -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/css/alertify.min.css" />
+    <!-- Link Alertify Default theme -->
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/css/themes/default.min.css" />
     <!-- Link CSS -->
     <link rel="stylesheet" href="../public/style/admin.css">
 
@@ -24,92 +28,119 @@
 
         <div class="d-flex flex-column mt-5">
             <!-- Landing Section -->
-            <a class="btn btn-primary" data-toggle="collapse" href="#landing" role="button" aria-expanded="false"
-                aria-controls="landing">
+            <a class="btn btn-primary mb-2" id="btn-collapse-landing" data-toggle="collapse" href="#landing"
+                role="button" aria-expanded="false" aria-controls="landing">
                 Seccion Inicio
             </a>
             <div class="collapse" id="landing">
                 <div class="form-group p-5">
                     <label for="landing_subtitle">Subtitulo del inicio:</label>
                     <input type="text" name="landing_subtitle" class="form-control" id="landing_subtitle">
-                    <a class="btn btn-success form-control" id="update_landing">Guardar cambios</a>
+                    <a class="btn btn-success form-control mt-3" id="update_landing">Guardar cambios</a>
                 </div>
             </div>
 
             <!-- About Section -->
-            <a class="btn btn-primary" data-toggle="collapse" href="#about" role="button" aria-expanded="false"
-                aria-controls="about">
+            <a class="btn btn-primary mb-2" id="btn-collapse-about" data-toggle="collapse" href="#about" role="button"
+                aria-expanded="false" aria-controls="about">
                 Seccion Acerca de
             </a>
             <div class="collapse" id="about">
                 <div class="p-5">
+                    <label for="portfolio_images">Imagen del Acerca de</label>
+                    <h6 class="green">Imagen actual:</h6>
+                    <input type="text" class="form-contro mb-3l" id="about_img_info" disabled>
+                    <img class="img-fluid" id="about_img" src="">
+                    <input type="file" name="image" class="form-control mb-3" id="input_about_img">
                     <label for="about_description">Descripcion del Acerca de:</label>
-                    <input type="text" name="about_description" class="form-control" id="about_description">
+                    <textarea name="about_description" class="form-control" id="about_description" cols="40"
+                        rows="15"></textarea>
                     <label for="social_media_link">Facebook Link:</label>
-                    <input type="text" name="social_media_link" class="form-control" id="social_media_link">
+                    <input type="text" name="social_media_link" class="form-control" id="social_media_link_1">
                     <label for="social_media_link">Instagram Link:</label>
-                    <input type="text" name="social_media_link" class="form-control" id="social_media_link">
+                    <input type="text" name="social_media_link" class="form-control" id="social_media_link_2">
                     <label for="social_media_link">Numero del Whatsapp:</label>
-                    <input type="text" name="social_media_link" class="form-control" id="social_media_link">
-                    <a class="btn btn-success form-control" id="update_about">Guardar cambios</a>
+                    <input type="text" name="social_media_link" class="form-control" id="social_media_link_3">
+                    <a class="btn btn-success form-control mt-3" id="update_about">Guardar cambios</a>
                 </div>
             </div>
 
             <!-- Services Section -->
-            <a class="btn btn-primary" data-toggle="collapse" href="#services" role="button" aria-expanded="false"
-                aria-controls="services">
+            <a class="btn btn-primary mb-2" id="btn-collapse-services" data-toggle="collapse" href="#services"
+                role="button" aria-expanded="false" aria-controls="services">
                 Seccion Servicios
             </a>
             <div class="collapse" id="services">
                 <div class="p-5">
                     <label for="service_contabilidad">Descripcion del servicio Contabilidad:</label>
                     <input type="text" name="service_contabilidad" class="form-control" id="service_contabilidad">
-                    <label for="service_contabilidad">Descripcion del servicio Administracion</label>
-                    <input type="text" name="service_contabilidad" class="form-control" id="service_contabilidad">
-                    <label for="service_contabilidad">Descripcion del servicio Reclutamiento</label>
-                    <input type="text" name="service_contabilidad" class="form-control" id="service_contabilidad">
-                    <a class="btn btn-success form-control" id="update_services">Guardar cambios</a>
+                    <label for="service_administration">Descripcion del servicio Administracion</label>
+                    <input type="text" name="service_administration" class="form-control" id="service_administration">
+                    <label for="service_recruitment">Descripcion del servicio Reclutamiento</label>
+                    <input type="text" name="service_recruitment" class="form-control" id="service_recruitment">
+                    <a class="btn btn-success form-control mt-3" id="update_services">Guardar cambios</a>
                 </div>
             </div>
 
             <!-- Portfolio Section -->
-            <a class="btn btn-primary" data-toggle="collapse" href="#portfolio" role="button" aria-expanded="false"
-                aria-controls="portfolio">
+            <a class="btn btn-primary mb-2" id="btn-collapse-portfolio" data-toggle="collapse" href="#portfolio"
+                role="button" aria-expanded="false" aria-controls="portfolio">
                 Seccion Portafolio
             </a>
             <div class="collapse" id="portfolio">
                 <div class="p-5">
-                    <label for="portfolio_titles">Titulo del primer portafolio:</label>
-                    <input type="text" name="portfolio_titles" class="form-control" id="portfolio_titles">
-                    <label for="portfolio_titles">Titulo del segundo portafolio:</label>
-                    <input type="text" name="portfolio_titles" class="form-control" id="portfolio_titles">
-                    <label for="portfolio_titles">Titulo del tercer portafolio:</label>
-                    <input type="text" name="portfolio_titles" class="form-control" id="portfolio_titles">
-                    <label for="portfolio_subtitles">Subtitulo del primer portafolio</label>
-                    <input type="text" name="portfolio_subtitles" class="form-control" id="portfolio_subtitles">
-                    <label for="portfolio_subtitles">Subtitulo del segundo portafolio</label>
-                    <input type="text" name="portfolio_subtitles" class="form-control" id="portfolio_subtitles">
-                    <label for="portfolio_subtitles">Subtitulo del tercer portafolio</label>
-                    <input type="text" name="portfolio_subtitles" class="form-control" id="portfolio_subtitles">
-                    <label for="portolio_descriptions">Descripcion del primer portafolio</label>
-                    <input type="text" name="portfolio_descriptions" class="form-control" id="portfolio_descriptions">
-                    <label for="portolio_descriptions">Descripcion del segundo portafolio</label>
-                    <input type="text" name="portfolio_descriptions" class="form-control" id="portfolio_descriptions">
-                    <label for="portolio_descriptions">Descripcion del tercer portafolio</label>
-                    <input type="text" name="portfolio_descriptions" class="form-control" id="portfolio_descriptions">
-                    <label for="portfolio_links">Enlace del primer portafolio</label>
-                    <input type="text" name="portfolio_links" class="form-control" id="portfolio_links">
-                    <label for="portfolio_links">Enlace del segundo portafolio</label>
-                    <input type="text" name="portfolio_links" class="form-control" id="portfolio_links">
-                    <label for="portfolio_links">Enlace del tercer portafolio</label>
-                    <input type="text" name="portfolio_links" class="form-control" id="portfolio_links">
-                    <label for="portfolio_images">Imagen del primero portafolio</label>
-                    <input type="file" name="portfolio_images" class="form-control" id="portfolio_images">
-                    <label for="portfolio_images">Imagen del segundo portafolio</label>
-                    <input type="file" name="portfolio_images" class="form-control" id="portfolio_images">
-                    <label for="portfolio_images">Imagen del tercer portafolio</label>
-                    <input type="file" name="portfolio_images" class="form-control" id="portfolio_images">
-                    <a class="btn btn-success form-control" id="update_portfolio">Guardar cambios</a>
+                    <label for="first_port_title">Titulo del primer portafolio:</label>
+                    <input type="text" name="first_port_title" class="form-control" id="first_port_title">
+
+                    <label for="sec_port_title">Titulo del segundo portafolio:</label>
+                    <input type="text" name="sec_port_title" class="form-control" id="sec_port_title">
+
+                    <label for="third_port_title">Titulo del tercer portafolio:</label>
+                    <input type="text" name="third_port_title" class="form-control" id="third_port_title">
+
+                    <label for="first_port_subtitle">Subtitulo del primer portafolio</label>
+                    <input type="text" name="first_port_subtitle" class="form-control" id="first_port_subtitle">
+
+                    <label for="sec_port_subtitle">Subtitulo del segundo portafolio</label>
+                    <input type="text" name="sec_port_subtitle" class="form-control" id="sec_port_subtitle">
+
+                    <label for="third_port_subtitle">Subtitulo del tercer portafolio</label>
+                    <input type="text" name="third_port_subtitle" class="form-control" id="third_port_subtitle">
+
+                    <label for="first_port_description">Descripcion del primer portafolio</label>
+                    <input type="text" name="first_port_description" class="form-control" id="first_port_description">
+
+                    <label for="sec_port_description">Descripcion del segundo portafolio</label>
+                    <input type="text" name="sec_port_description" class="form-control" id="sec_port_description">
+
+                    <label for="thrid_port_description">Descripcion del tercer portafolio</label>
+                    <input type="text" name="thrid_port_description" class="form-control" id="thrid_port_description">
+
+                    <label for="first_port_link">Enlace del primer portafolio</label>
+                    <input type="text" name="first_port_link" class="form-control" id="first_port_link">
+
+                    <label for="sec_port_link">Enlace del segundo portafolio</label>
+                    <input type="text" name="sec_port_link" class="form-control" id="sec_port_link">
+
+                    <label for="third_port_link">Enlace del tercer portafolio</label>
+                    <input type="text" name="third_port_link" class="form-control" id="third_port_link">
+
+                    <label for="first_port_img">Imagen del primero portafolio</label>
+                    <h6 class="green" id="port_img_info_1">Imagen actual:</h6>
+                    <img class="img-fluid d-flex justify-content-center" id="first_show_port_img" src="">
+                    <input type="file" name="first_port_img" class="form-control" id="first_port_img" value="hey">
+
+                    <label for="sec_port_img">Imagen del segundo portafolio</label>
+                    <h6 class="green" id="port_img_info_2">Imagen actual:</h6>
+                    <img class="img-fluid d-flex justify-content-center" id="sec_show_port_img" src="">
+                    <input type="file" name="sec_port_img" class="form-control" id="sec_port_img">
+                    
+                    <label for="third_port_img">Imagen del tercer portafolio</label>
+                    <h6 class="green" id="port_img_info_3">Imagen actual:</h6>
+                    <img class="img-fluid d-flex justify-content-center" id="third_show_port_img" src="">
+                    <input type="file" name="third_port_img" class="form-control" id="third_port_img">
+
+                    <a class="btn btn-success form-control mt-3 mt-3" id="update_portfolio">Guardar cambios</a>
                 </div>
             </div>
 
@@ -127,8 +158,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    <!-- Script AlertifyJs -->
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/alertify.min.js"></script>
     <!-- Script Load -->
     <script src="../public/js/load_content.js"></script>
 </body>
 
 </html>
+
+<!-- 
+
+    Somos un equipo de profesionales, nuestro objetivo primordial es brindar "una solucion integral" de calidad que optimice la eficiencia y productividad de tu negocio, ofreciendo servicios en manejo de talento Humano, Outsourcing de planilla, Contabilidad administrativa, Contabilidad Financiera, Contabilidad Tributaria entre otros que nos convierten en un verdadero centro de operaciones empresariales. Ponemos a disposicion todos estos servicios, producto de nuestro compromiso, seriedad, confidencialidad, creatividad y trabajo en equipo Horario de atencion: De Lunes a Sabado: 8:00 AM hasta 5:00 PM
+
+ -->

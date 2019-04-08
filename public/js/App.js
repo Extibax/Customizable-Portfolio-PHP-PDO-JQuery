@@ -3,6 +3,8 @@ let sticky = menu_toggler.offsetTop;
 
 $(document).ready(function () {
 
+    alertify.set('notifier','position', 'top-center');
+
     $(this).scroll(function () {
         if (window.pageYOffset > sticky) {
             menu_toggler.classList.add("sticky");

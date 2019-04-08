@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Link Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="../public/style/admin.css">
+
+    <title>Editar Contenido</title>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="wrap-text">
+            <h1 class="text-center mt-5">Editar Contenido</h1>
+        </div>
+
+        <div class="d-flex flex-column mt-5">
+            <!-- Landing Section -->
+            <a class="btn btn-primary" data-toggle="collapse" href="#landing" role="button" aria-expanded="false"
+                aria-controls="landing">
+                Seccion Inicio
+            </a>
+            <div class="collapse" id="landing">
+                <div class="form-group p-5">
+                    <label for="landing_subtitle">Subtitulo del inicio:</label>
+                    <input type="text" name="landing_subtitle" class="form-control" id="landing_subtitle">
+                    <a class="btn btn-success form-control" id="update_landing">Guardar cambios</a>
+                </div>
+            </div>
+
+            <!-- About Section -->
+            <a class="btn btn-primary" data-toggle="collapse" href="#about" role="button" aria-expanded="false"
+                aria-controls="about">
+                Seccion Acerca de
+            </a>
+            <div class="collapse" id="about">
+                <div class="p-5">
+                    <label for="about_description">Descripcion del Acerca de:</label>
+                    <input type="text" name="about_description" class="form-control" id="about_description">
+                    <label for="social_media_link">Facebook Link:</label>
+                    <input type="text" name="social_media_link" class="form-control" id="social_media_link">
+                    <label for="social_media_link">Instagram Link:</label>
+                    <input type="text" name="social_media_link" class="form-control" id="social_media_link">
+                    <label for="social_media_link">Numero del Whatsapp:</label>
+                    <input type="text" name="social_media_link" class="form-control" id="social_media_link">
+                    <a class="btn btn-success form-control" id="update_about">Guardar cambios</a>
+                </div>
+            </div>
+
+            <!-- Services Section -->
+            <a class="btn btn-primary" data-toggle="collapse" href="#services" role="button" aria-expanded="false"
+                aria-controls="services">
+                Seccion Servicios
+            </a>
+            <div class="collapse" id="services">
+                <div class="p-5">
+                    <label for="service_contabilidad">Descripcion del servicio Contabilidad:</label>
+                    <input type="text" name="service_contabilidad" class="form-control" id="service_contabilidad">
+                    <label for="service_contabilidad">Descripcion del servicio Administracion</label>
+                    <input type="text" name="service_contabilidad" class="form-control" id="service_contabilidad">
+                    <label for="service_contabilidad">Descripcion del servicio Reclutamiento</label>
+                    <input type="text" name="service_contabilidad" class="form-control" id="service_contabilidad">
+                    <a class="btn btn-success form-control" id="update_services">Guardar cambios</a>
+                </div>
+            </div>
+
+            <!-- Portfolio Section -->
+            <a class="btn btn-primary" data-toggle="collapse" href="#portfolio" role="button" aria-expanded="false"
+                aria-controls="portfolio">
+                Seccion Portafolio
+            </a>
+            <div class="collapse" id="portfolio">
+                <div class="p-5">
+                    <label for="portfolio_titles">Titulo del primer portafolio:</label>
+                    <input type="text" name="portfolio_titles" class="form-control" id="portfolio_titles">
+                    <label for="portfolio_titles">Titulo del segundo portafolio:</label>
+                    <input type="text" name="portfolio_titles" class="form-control" id="portfolio_titles">
+                    <label for="portfolio_titles">Titulo del tercer portafolio:</label>
+                    <input type="text" name="portfolio_titles" class="form-control" id="portfolio_titles">
+                    <label for="portfolio_subtitles">Subtitulo del primer portafolio</label>
+                    <input type="text" name="portfolio_subtitles" class="form-control" id="portfolio_subtitles">
+                    <label for="portfolio_subtitles">Subtitulo del segundo portafolio</label>
+                    <input type="text" name="portfolio_subtitles" class="form-control" id="portfolio_subtitles">
+                    <label for="portfolio_subtitles">Subtitulo del tercer portafolio</label>
+                    <input type="text" name="portfolio_subtitles" class="form-control" id="portfolio_subtitles">
+                    <label for="portolio_descriptions">Descripcion del primer portafolio</label>
+                    <input type="text" name="portfolio_descriptions" class="form-control" id="portfolio_descriptions">
+                    <label for="portolio_descriptions">Descripcion del segundo portafolio</label>
+                    <input type="text" name="portfolio_descriptions" class="form-control" id="portfolio_descriptions">
+                    <label for="portolio_descriptions">Descripcion del tercer portafolio</label>
+                    <input type="text" name="portfolio_descriptions" class="form-control" id="portfolio_descriptions">
+                    <label for="portfolio_links">Enlace del primer portafolio</label>
+                    <input type="text" name="portfolio_links" class="form-control" id="portfolio_links">
+                    <label for="portfolio_links">Enlace del segundo portafolio</label>
+                    <input type="text" name="portfolio_links" class="form-control" id="portfolio_links">
+                    <label for="portfolio_links">Enlace del tercer portafolio</label>
+                    <input type="text" name="portfolio_links" class="form-control" id="portfolio_links">
+                    <label for="portfolio_images">Imagen del primero portafolio</label>
+                    <input type="file" name="portfolio_images" class="form-control" id="portfolio_images">
+                    <label for="portfolio_images">Imagen del segundo portafolio</label>
+                    <input type="file" name="portfolio_images" class="form-control" id="portfolio_images">
+                    <label for="portfolio_images">Imagen del tercer portafolio</label>
+                    <input type="file" name="portfolio_images" class="form-control" id="portfolio_images">
+                    <a class="btn btn-success form-control" id="update_portfolio">Guardar cambios</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Script JQuery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <!-- Script PopperJs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <!-- Script Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <!-- Script Load -->
+    <script src="../public/js/load_content.js"></script>
+</body>
+
+</html>

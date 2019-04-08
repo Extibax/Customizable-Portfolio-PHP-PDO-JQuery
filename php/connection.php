@@ -15,6 +15,6 @@ $DB = $_ENV['DB'];
 
 $connection = mysqli_connect($HOST, $USER, $PASS, $DB);
 
-if ($connection) {
+/* if ($connection) {
   echo "The conn is OK";
-}
+} */

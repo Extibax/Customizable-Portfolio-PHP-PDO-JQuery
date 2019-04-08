@@ -19,7 +19,7 @@
     <!-- Link AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <!-- Link CSS -->
-    <link rel="stylesheet" href="style/syle.css">
+    <link rel="stylesheet" href="public/style/style.css">
 
     <title>EAM Consultores</title>
 </head>
@@ -60,7 +60,7 @@
             <h1>
                 EAM<br><span class="red">Consultores</span>
             </h1>
-            <h6>Contabilidad | Administracion | Reclutamiento</h6>
+            <h6 id="landing-subtitle">Contabilidad | Administracion | Reclutamiento</h6>
             <a href="#about" class="btn btn-black" id="btn-start">
                 Acerca de
             </a>
@@ -70,7 +70,7 @@
     <section class="about" id="about">
         <div class="container">
             <div class="profile-img" data-aos="fade-right" data-aos-delay="300">
-                <img src="img/profile.jpeg" alt="EAM Profile Img">
+                <img src="public/img/profile.jpeg" alt="EAM Profile Img">
             </div>
             <div class="about-details" data-aos="fade-left" data-aos-delay="600">
                 <div class="about-heading">
@@ -78,11 +78,16 @@
                     <h6>EAM Consultores</h6>
                 </div>
                 <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo ea repellat illo. Ut quos dolores
-                    quam
-                    ullam qui natus deleniti optio quis, accusantium voluptatibus. Pariatur eum dolores explicabo
-                    hic.
-                    Dignissimos? accusantium voluptatibus. Pariatur eum dolores explicabo hic.
+                    Somos un equipo de profesionales, nuestro objetivo primordial es brindar "una solucion integral" de
+                    calidad que optimice la eficiencia y productividad de tu negocio, ofreciendo servicios en manejo de
+                    talento Humano, Outsourcing de planilla, Contabilidad administrativa, Contabilidad Financiera,
+                    Contabilidad Tributaria entre otros que nos convierten en un verdadero centro de operaciones
+                    empresariales.
+                    <br><br>
+                    Ponemos a disposicion todos estos servicios, producto de nuestro compromiso, seriedad,
+                    confidencialidad, creatividad y trabajo en equipo
+                    <br><br>
+                    <p><span class="green">Horario de atencion:</span> De Lunes a Sabado: 8:00 AM hasta 5:00 PM</p>
                 </p>
                 <div class="social-media">
                     <div class="nav-list">
@@ -156,7 +161,7 @@
             </div>
             <div class="portfolio-item">
                 <div class="portfolio-img has-margin-right" data-aos="fade-right" data-aos-delay="300">
-                    <img src="img/portitem1.jpeg" alt="">
+                    <img src="public/img/portitem1.jpeg" alt="">
                 </div>
                 <div class="portfolio-description" data-aos="fade-left" data-aos-delay="600">
                     <h6>Contabilidad</h6>
@@ -177,12 +182,12 @@
                     <a href="#" class="cta">Mas Info</a>
                 </div>
                 <div class="portfolio-img" data-aos="fade-left" data-aos-delay="1200">
-                    <img src="img/portitem2.jpeg" alt="">
+                    <img src="public/img/portitem2.jpeg" alt="">
                 </div>
             </div>
             <div class="portfolio-item">
                 <div class="portfolio-img has-margin-right" data-aos="fade-right" data-aos-delay="1500">
-                    <img src="img/portitem3.jpeg" alt="">
+                    <img src="public/img/portitem3.jpeg" alt="">
                 </div>
                 <div class="portfolio-description" data-aos="fade-left" data-aos-delay="1800">
                     <h6>Contabilidad</h6>
@@ -221,12 +226,14 @@
     </section>
 
     <footer class="copyright">
+        <p>
+            &copy; 2019 EAM Consultores | Developed by <a class="link-green" target="_blank"
+                href="http://www.extibax.com">extibax.com</a>
+        </p>
         <div class="up" id="up">
             <i class="fas fa-chevron-up"></i>
         </div>
-        <p>
-            &copy; 2019 EAM Consultores
-        </p>
+        <a href="views/login_view.html" target="_blank">Login Admin</a>
     </footer>
 
     <!-- Script JQuery -->
@@ -245,7 +252,7 @@
     <!-- Script AOS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <!-- Script App -->
-    <script src="js/App.js"></script>
+    <script src="public/js/App.js"></script>
 </body>
 
 </html>

@@ -19,128 +19,233 @@
 </head>
 
 <body>
-
     <div class="container">
-
         <div class="wrap-text">
-            <h1 class="text-center mt-5">Editar Contenido</h1>
-        </div>
 
+            <!-- Title -->
+            <h1 class="text-center mt-5">Editar Contenido</h1>
+
+        </div>
         <div class="d-flex flex-column mt-5">
-            <!-- Landing Section -->
+
+            <!-- Collapse Button Landing -->
             <a class="btn btn-primary mb-2" id="btn-collapse-landing" data-toggle="collapse" href="#landing"
                 role="button" aria-expanded="false" aria-controls="landing">
-                Seccion Inicio
+                Seccion: Inicio
             </a>
+
+            <!-- Landing Section -->
             <div class="collapse" id="landing">
-                <div class="form-group p-5">
-                    <label for="landing_subtitle">Subtitulo del inicio:</label>
-                    <input type="text" name="landing_subtitle" class="form-control" id="landing_subtitle">
-                    <a class="btn btn-success form-control mt-3" id="update_landing">Guardar cambios</a>
+                <div class="p-5">
+                    <div class="card">
+                        <div class="card-header text-center">
+
+                            <!-- Card Title -->
+                            Seccion: Inicio
+
+                        </div>
+                        <div class="card-body">
+
+                            <!-- Landing Subtitle -->
+                            <label for="landing_subtitle">Subtitulo del inicio:</label>
+                            <input type="text" name="landing_subtitle" class="form-control" id="landing_subtitle">
+
+                        </div>
+                        <div class="card-footer">
+
+                            <!-- Update Button -->
+                            <a class="btn btn-success form-control mt-3" id="update_landing">Guardar cambios</a>
+
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- About Section -->
+            <!-- Collapse Button About -->
             <a class="btn btn-primary mb-2" id="btn-collapse-about" data-toggle="collapse" href="#about" role="button"
                 aria-expanded="false" aria-controls="about">
-                Seccion Acerca de
+                Seccion: Acerca de
             </a>
+
+            <!-- About Section -->
             <div class="collapse" id="about">
                 <div class="p-5">
-                    <label for="portfolio_images">Imagen del Acerca de</label>
-                    <h6 class="green">Imagen actual:</h6>
-                    <input type="text" class="form-contro mb-3l" id="about_img_info" disabled>
-                    <img class="img-fluid" id="about_img" src="">
-                    <input type="file" name="image" class="form-control mb-3" id="input_about_img">
-                    <label for="about_description">Descripcion del Acerca de:</label>
-                    <textarea name="about_description" class="form-control" id="about_description" cols="40"
-                        rows="15"></textarea>
-                    <label for="social_media_link">Facebook Link:</label>
-                    <input type="text" name="social_media_link" class="form-control" id="social_media_link_1">
-                    <label for="social_media_link">Instagram Link:</label>
-                    <input type="text" name="social_media_link" class="form-control" id="social_media_link_2">
-                    <label for="social_media_link">Numero del Whatsapp:</label>
-                    <input type="text" name="social_media_link" class="form-control" id="social_media_link_3">
-                    <a class="btn btn-success form-control mt-3" id="update_about">Guardar cambios</a>
+                    <div class="card">
+                        <div class="card-header text-center">
+
+                            <!-- Card Title -->
+                            Seccion: Acerca de
+                            
+                        </div>
+                    </div>
+                    <div class="card-body">
+
+                        <!-- About Image -->
+                        <label>Imagen</label>
+                        <img class="img-fluid" id="src_about_img" src="">
+                        <input type="file" name="image" class="form-control mb-3" id="input_about_img">
+
+                        <!-- About Description -->
+                        <label>Descripcion</label>
+                        <textarea class="form-control" id="textarea_about_description" cols="40" rows="15"></textarea>
+
+                        <!-- Facebook Link -->
+                        <label>Facebook Link:</label>
+                        <input type="text" class="form-control" id="social_media_link_facebook">
+
+                        <!-- Instagram Link -->
+                        <label>Instagram Link:</label>
+                        <input type="text" class="form-control" id="social_media_link_instagram">
+
+                        <!-- Whatsapp Number -->
+                        <label>Whatsapp Number:</label>
+                        <input type="text" class="form-control" id="social_media_link_whatsapp">
+
+                    </div>
+                    <div class="card-footer">
+
+                        <!-- Update Button -->
+                        <a class="btn btn-success form-control mt-3" id="update_about">Guardar cambios</a>
+
+                    </div>
                 </div>
             </div>
 
-            <!-- Services Section -->
+            <!-- Collapse Button Services -->
             <a class="btn btn-primary mb-2" id="btn-collapse-services" data-toggle="collapse" href="#services"
                 role="button" aria-expanded="false" aria-controls="services">
-                Seccion Servicios
+                Seccion: Servicios
             </a>
+
+            <!-- Services Section -->
             <div class="collapse" id="services">
                 <div class="p-5">
-                    <label for="service_contabilidad">Descripcion del servicio Contabilidad:</label>
-                    <input type="text" name="service_contabilidad" class="form-control" id="service_contabilidad">
-                    <label for="service_administration">Descripcion del servicio Administracion</label>
-                    <input type="text" name="service_administration" class="form-control" id="service_administration">
-                    <label for="service_recruitment">Descripcion del servicio Reclutamiento</label>
-                    <input type="text" name="service_recruitment" class="form-control" id="service_recruitment">
-                    <a class="btn btn-success form-control mt-3" id="update_services">Guardar cambios</a>
+                    <div class="card">
+                        <div class="card-header text-center">
+
+                            <!-- Card Title -->
+                            Seccion: Servicios
+
+                        </div>
+                        <div class="card-body">
+
+                            <!-- Service Accounting Description -->
+                            <label for="service_contabilidad">Descripcion Servicio Contabiliad</label>
+                            <input type="text" name="service_contabilidad" class="form-control"
+                                id="service_contabilidad">
+                            
+                            <!-- Service Administration Description -->
+                            <label for="service_administration">Descripcion Servicion Administracion</label>
+                            <input type="text" name="service_administration" class="form-control"
+                                id="service_administration">
+
+                            <!-- Service Recruitment Description -->
+                            <label for="service_recruitment">Descripcion del servicio Reclutamiento</label>
+                            <input type="text" name="service_recruitment" class="form-control" id="service_recruitment">
+
+                        </div>
+                        <div class="card-footer">
+
+                            <!-- Update Button -->
+                            <a class="btn btn-success form-control mt-3" id="update_services">Guardar cambios</a>
+
+                        </div>
+                    </div>
                 </div>
             </div>
 
-            <!-- Portfolio Section -->
+            <!-- Collapse Button Portfolio -->
             <a class="btn btn-primary mb-2" id="btn-collapse-portfolio" data-toggle="collapse" href="#portfolio"
                 role="button" aria-expanded="false" aria-controls="portfolio">
-                Seccion Portafolio
+                Seccion: Portafolio
             </a>
+
+            <!-- Portfolio Section -->
             <div class="collapse" id="portfolio">
                 <div class="p-5">
-                    <label for="first_port_title">Titulo del primer portafolio:</label>
-                    <input type="text" name="first_port_title" class="form-control" id="first_port_title">
+                    <div class="card">
+                        <div class="card-header text-center">
 
-                    <label for="sec_port_title">Titulo del segundo portafolio:</label>
-                    <input type="text" name="sec_port_title" class="form-control" id="sec_port_title">
+                            <!-- Card Title -->
+                            Seccion: Portafolio
 
-                    <label for="third_port_title">Titulo del tercer portafolio:</label>
-                    <input type="text" name="third_port_title" class="form-control" id="third_port_title">
+                        </div>
+                        <div class="card-body">
 
-                    <label for="first_port_subtitle">Subtitulo del primer portafolio</label>
-                    <input type="text" name="first_port_subtitle" class="form-control" id="first_port_subtitle">
+                            <!-- First Portfolio-Item Title -->
+                            <label>Titulo del primer portafolio:</label>
+                            <input type="text" name="first_port_title" class="form-control" id="first_port_title">
 
-                    <label for="sec_port_subtitle">Subtitulo del segundo portafolio</label>
-                    <input type="text" name="sec_port_subtitle" class="form-control" id="sec_port_subtitle">
+                            <!-- Second Portfolio-Item Title -->
+                            <label>Titulo del segundo portafolio:</label>
+                            <input type="text" name="sec_port_title" class="form-control" id="sec_port_title">
 
-                    <label for="third_port_subtitle">Subtitulo del tercer portafolio</label>
-                    <input type="text" name="third_port_subtitle" class="form-control" id="third_port_subtitle">
+                            <!-- Third Portfolio-Item Title -->
+                            <label>Titulo del tercer portafolio:</label>
+                            <input type="text" name="third_port_title" class="form-control" id="third_port_title">
 
-                    <label for="first_port_description">Descripcion del primer portafolio</label>
-                    <input type="text" name="first_port_description" class="form-control" id="first_port_description">
+                            <!-- First Portfolio-Item Subtitle -->
+                            <label>Subtitulo del primer portafolio</label>
+                            <input type="text" name="first_port_subtitle" class="form-control" id="first_port_subtitle">
 
-                    <label for="sec_port_description">Descripcion del segundo portafolio</label>
-                    <input type="text" name="sec_port_description" class="form-control" id="sec_port_description">
+                            <!-- Second Portfolio-Item Subtitle -->
+                            <label>Subtitulo del segundo portafolio</label>
+                            <input type="text" name="sec_port_subtitle" class="form-control" id="sec_port_subtitle"><label>
 
-                    <label for="thrid_port_description">Descripcion del tercer portafolio</label>
-                    <input type="text" name="thrid_port_description" class="form-control" id="thrid_port_description">
+                            <!-- Third Portfolio-Item Subtitle -->
+                            <label>Subtitulo del tercer portafolio</label>
+                            <input type="text" name="third_port_subtitle" class="form-control" id="third_port_subtitle">
 
-                    <label for="first_port_link">Enlace del primer portafolio</label>
-                    <input type="text" name="first_port_link" class="form-control" id="first_port_link">
+                            <!-- First Portfolio-Item Description -->
+                            <label>Descripcion del primer portafolio</label>
+                            <input type="text" name="first_port_description" class="form-control"
+                                id="first_port_description">
+                                
+                            <!-- Second Portfolio-Item Description -->
+                            <label>Descripcion del segundo portafolio</label>
+                            <input type="text" name="sec_port_description" class="form-control"
+                                id="sec_port_description">
 
-                    <label for="sec_port_link">Enlace del segundo portafolio</label>
-                    <input type="text" name="sec_port_link" class="form-control" id="sec_port_link">
+                            <!-- Third Portfolio-Item Description -->
+                            <label>Descripcion del tercer portafolio</label>
+                            <input type="text" name="thrid_port_description" class="form-control"
+                                id="thrid_port_description">
 
-                    <label for="third_port_link">Enlace del tercer portafolio</label>
-                    <input type="text" name="third_port_link" class="form-control" id="third_port_link">
+                            <!-- First Portfolio-Item Link -->
+                            <label>Enlace del primer portafolio</label>
+                            <input type="text" name="first_port_link" class="form-control" id="first_port_link">
 
-                    <label for="first_port_img">Imagen del primero portafolio</label>
-                    <h6 class="green" id="port_img_info_1">Imagen actual:</h6>
-                    <img class="img-fluid d-flex justify-content-center" id="first_show_port_img" src="">
-                    <input type="file" name="first_port_img" class="form-control" id="first_port_img" value="hey">
+                            <!-- Second Portfolio-Item Link -->
+                            <label>Enlace del segundo portafolio</label>
+                            <input type="text" name="sec_port_link" class="form-control" id="sec_port_link">
 
-                    <label for="sec_port_img">Imagen del segundo portafolio</label>
-                    <h6 class="green" id="port_img_info_2">Imagen actual:</h6>
-                    <img class="img-fluid d-flex justify-content-center" id="sec_show_port_img" src="">
-                    <input type="file" name="sec_port_img" class="form-control" id="sec_port_img">
-                    
-                    <label for="third_port_img">Imagen del tercer portafolio</label>
-                    <h6 class="green" id="port_img_info_3">Imagen actual:</h6>
-                    <img class="img-fluid d-flex justify-content-center" id="third_show_port_img" src="">
-                    <input type="file" name="third_port_img" class="form-control" id="third_port_img">
+                            <!-- Third Portfolio-Item Link -->
+                            <label>Enlace del tercer portafolio</label>
+                            <input type="text" name="third_port_link" class="form-control" id="third_port_link">
 
-                    <a class="btn btn-success form-control mt-3 mt-3" id="update_portfolio">Guardar cambios</a>
+                            <!-- First Portfolio-Item Image -->
+                            <label>Imagen del primero portafolio</label>
+                            <img class="img-fluid d-flex justify-content-center" id="first_show_port_img" src="">
+                            <input type="file" name="first_port_img" class="form-control" id="first_port_img"
+                                value="hey">
+
+                            <!-- Second Portfolio-Item Image -->
+                            <label>Imagen del segundo portafolio</label>
+                            <img class="img-fluid d-flex justify-content-center" id="sec_show_port_img" src="">
+                            <input type="file" name="sec_port_img" class="form-control" id="sec_port_img">
+
+                            <!-- Third Portfolio-Item Image -->
+                            <label>Imagen del tercer portafolio</label>
+                            <img class="img-fluid d-flex justify-content-center" id="third_show_port_img" src="">
+                            <input type="file" name="third_port_img" class="form-control" id="third_port_img">
+                        </div>
+                        <div class="card-footer">
+
+                            <!-- Update Button -->
+                            <a class="btn btn-success form-control mt-3 mt-3" id="update_portfolio">Guardar cambios</a>
+
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -161,13 +266,8 @@
     <!-- Script AlertifyJs -->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/alertify.min.js"></script>
     <!-- Script Load -->
-    <script src="../public/js/load_content.js"></script>
+    <script src="../public/js/Load.js"></script>
+    
 </body>
 
 </html>
-
-<!-- 
-
-    Somos un equipo de profesionales, nuestro objetivo primordial es brindar "una solucion integral" de calidad que optimice la eficiencia y productividad de tu negocio, ofreciendo servicios en manejo de talento Humano, Outsourcing de planilla, Contabilidad administrativa, Contabilidad Financiera, Contabilidad Tributaria entre otros que nos convierten en un verdadero centro de operaciones empresariales. Ponemos a disposicion todos estos servicios, producto de nuestro compromiso, seriedad, confidencialidad, creatividad y trabajo en equipo Horario de atencion: De Lunes a Sabado: 8:00 AM hasta 5:00 PM
-
- -->

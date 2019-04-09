@@ -25,13 +25,13 @@ $(document).ready(function () {
 
     $('nav a[href*="#"]').on('click', function() {
         $('html, body').animate(keyframes = {
-            scrollTop: $($(this).attr('href')).offset().top - 100
+            scrollTop: $($(this).attr('href')).offset().top - 40
         }, options = 2000);
     });
 
     $('#btn-start').on('click', () => {
         $('html, body').animate(keyframes = {
-            scrollTop: $('#about').offset().top - 100
+            scrollTop: $('#about').offset().top - 40
         }, options = 2000);
     })
 

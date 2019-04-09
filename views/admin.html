@@ -27,7 +27,11 @@
         <div class="wrap-text">
 
             <!-- Title -->
-            <h1 class="text-center mt-5">Editar Contenido</h1>
+            <div class="d-flex justify-content-between align-items-center">
+                <a class="btn btn-primary" href="../index.html ">Volver al inicio</a>
+                <h1 class="text-center mt-5">Editar Contenido</h1>
+                <a class="btn btn-danger text-white" id="btn_close_session">Cerrar Sesion</a>
+            </div>
 
         </div>
         <div class="d-flex flex-column mt-5">
@@ -51,8 +55,10 @@
                         <div class="card-body">
 
                             <!-- Landing Subtitle -->
-                            <label for="landing_subtitle">Subtitulo del inicio:</label>
-                            <input type="text" name="landing_subtitle" class="form-control" id="landing_subtitle">
+                            <div class="form-group">
+                                <label for="landing_subtitle">Subtitulo Primer:</label>
+                                <input type="text" name="landing_subtitle" class="form-control" id="landing_subtitle">
+                            </div>
 
                         </div>
                         <div class="card-footer">
@@ -79,31 +85,42 @@
 
                             <!-- Card Title -->
                             Seccion: Acerca de
-                            
+
                         </div>
                     </div>
                     <div class="card-body">
 
                         <!-- About Image -->
-                        <label>Imagen</label>
-                        <img class="img-fluid" id="src_about_img" src="">
-                        <input type="file" name="image" class="form-control mb-3" id="input_about_img">
+                        <div class="form-group">
+                            <label>Imagen</label>
+                            <img class="img-fluid" id="src_about_img" src="">
+                            <input type="file" name="image" class="form-control mb-3" id="input_about_img">
+                        </div>
 
                         <!-- About Description -->
-                        <label>Descripcion</label>
-                        <textarea class="form-control" id="textarea_about_description" cols="40" rows="15"></textarea>
+                        <div class="form-group">
+                            <label>Descripcion</label>
+                            <textarea class="form-control" id="textarea_about_description" cols="40"
+                                rows="15"></textarea>
+                        </div>
 
                         <!-- Facebook Link -->
-                        <label>Facebook Link:</label>
-                        <input type="text" class="form-control" id="social_media_link_facebook">
+                        <div class="form-group">
+                            <label>Facebook Link:</label>
+                            <input type="text" class="form-control" id="social_media_link_facebook">
+                        </div>
 
                         <!-- Instagram Link -->
-                        <label>Instagram Link:</label>
-                        <input type="text" class="form-control" id="social_media_link_instagram">
+                        <div class="form-group">
+                            <label>Instagram Link:</label>
+                            <input type="text" class="form-control" id="social_media_link_instagram">
+                        </div>
 
                         <!-- Whatsapp Number -->
-                        <label>Whatsapp Number:</label>
-                        <input type="text" class="form-control" id="social_media_link_whatsapp">
+                        <div class="form-group">
+                            <label>Whatsapp Number:</label>
+                            <input type="text" class="form-control" id="social_media_link_whatsapp">
+                        </div>
 
                     </div>
                     <div class="card-footer">
@@ -134,18 +151,22 @@
                         <div class="card-body">
 
                             <!-- Service Accounting Description -->
-                            <label for="service_contabilidad">Descripcion Servicio Contabiliad</label>
-                            <input type="text" name="service_contabilidad" class="form-control"
-                                id="service_contabilidad">
-                            
+                            <div class="form-group">
+                                <label>Descripcion Servicio Contabiliad</label>
+                                <input type="text" class="form-control" id="service_accounting">
+                            </div>
+
                             <!-- Service Administration Description -->
-                            <label for="service_administration">Descripcion Servicion Administracion</label>
-                            <input type="text" name="service_administration" class="form-control"
-                                id="service_administration">
+                            <div class="form-group">
+                                <label>Descripcion Servicion Administracion</label>
+                                <input type="text" class="form-control" id="service_administration">
+                            </div>
 
                             <!-- Service Recruitment Description -->
-                            <label for="service_recruitment">Descripcion del servicio Reclutamiento</label>
-                            <input type="text" name="service_recruitment" class="form-control" id="service_recruitment">
+                            <div class="form-group">
+                                <label>Descripcion del servicio Reclutamiento</label>
+                                <input type="text" class="form-control" id="service_recruitment">
+                            </div>
 
                         </div>
                         <div class="card-footer">
@@ -177,71 +198,103 @@
                         <div class="card-body">
 
                             <!-- First Portfolio-Item Title -->
-                            <label>Titulo Primer Portafolio Item:</label>
-                            <input type="text" name="first_port_title" class="form-control" id="first_port_title">
+                            <div class="form-group">
+                                <label>Titulo Primer Item Portafolio:</label>
+                                <input type="text" name="first_port_title" class="form-control" id="first_port_title">
+                            </div>
 
                             <!-- Second Portfolio-Item Title -->
-                            <label>Titulo del segundo portafolio:</label>
-                            <input type="text" name="sec_port_title" class="form-control" id="sec_port_title">
+                            <div class="form-group">
+                                <label>Titulo Segundo Item Portafolio:</label>
+                                <input type="text" name="sec_port_title" class="form-control" id="sec_port_title">
+                            </div>
 
                             <!-- Third Portfolio-Item Title -->
-                            <label>Titulo del tercer portafolio:</label>
-                            <input type="text" name="third_port_title" class="form-control" id="third_port_title">
+                            <div class="form-group">
+                                <label>Titulo Tercer Item Portafolio:</label>
+                                <input type="text" name="third_port_title" class="form-control" id="third_port_title">
+                            </div>
 
                             <!-- First Portfolio-Item Subtitle -->
-                            <label>Subtitulo del primer portafolio</label>
-                            <input type="text" name="first_port_subtitle" class="form-control" id="first_port_subtitle">
+                            <div class="form-group">
+                                <label>Subtitulo Primer Item Portafolio:</label>
+                                <input type="text" name="first_port_subtitle" class="form-control"
+                                    id="first_port_subtitle">
+                            </div>
 
                             <!-- Second Portfolio-Item Subtitle -->
-                            <label>Subtitulo del segundo portafolio</label>
-                            <input type="text" name="sec_port_subtitle" class="form-control" id="sec_port_subtitle"><label>
+                            <div class="form-group">
+                                <label>Subtitulo Segundo Item Portafolio:</label>
+                                <input type="text" name="sec_port_subtitle" class="form-control" id="sec_port_subtitle">
+                            </div>
 
                             <!-- Third Portfolio-Item Subtitle -->
-                            <label>Subtitulo del tercer portafolio</label>
-                            <input type="text" name="third_port_subtitle" class="form-control" id="third_port_subtitle">
+                            <div class="form-group">
+                                <label>Subtitulo Tercer Item Portafolio:</label>
+                                <input type="text" name="third_port_subtitle" class="form-control"
+                                    id="third_port_subtitle">
+                            </div>
 
                             <!-- First Portfolio-Item Description -->
-                            <label>Descripcion del primer portafolio</label>
-                            <input type="text" name="first_port_description" class="form-control"
-                                id="first_port_description">
-                                
+                            <div class="form-group">
+                                <label>Descripcion Primer Item Portafolio:</label>
+                                <input type="text" name="first_port_description" class="form-control"
+                                    id="first_port_description">
+                            </div>
+
                             <!-- Second Portfolio-Item Description -->
-                            <label>Descripcion del segundo portafolio</label>
-                            <input type="text" name="sec_port_description" class="form-control"
-                                id="sec_port_description">
+                            <div class="form-group">
+                                <label>Descripcion Segundo Item Portafolio:</label>
+                                <input type="text" name="sec_port_description" class="form-control"
+                                    id="sec_port_description">
+                            </div>
 
                             <!-- Third Portfolio-Item Description -->
-                            <label>Descripcion del tercer portafolio</label>
-                            <input type="text" name="thrid_port_description" class="form-control"
-                                id="thrid_port_description">
+                            <div class="form-group">
+                                <label>Descripcion Tercer Item Portafolio:</label>
+                                <input type="text" name="thrid_port_description" class="form-control"
+                                    id="thrid_port_description">
+                            </div>
 
                             <!-- First Portfolio-Item Link -->
-                            <label>Enlace del primer portafolio</label>
-                            <input type="text" name="first_port_link" class="form-control" id="first_port_link">
+                            <div class="form-group">
+                                <label>Enlace Primer Item Portafolio:</label>
+                                <input type="text" name="first_port_link" class="form-control" id="first_port_link">
+                            </div>
 
                             <!-- Second Portfolio-Item Link -->
-                            <label>Enlace del segundo portafolio</label>
-                            <input type="text" name="sec_port_link" class="form-control" id="sec_port_link">
+                            <div class="form-group">
+                                <label>Enlace Segundo Item Portafolio:</label>
+                                <input type="text" name="sec_port_link" class="form-control" id="sec_port_link">
+                            </div>
 
                             <!-- Third Portfolio-Item Link -->
-                            <label>Enlace del tercer portafolio</label>
-                            <input type="text" name="third_port_link" class="form-control" id="third_port_link">
+                            <div class="form-group">
+                                <label>Enlace Tercer Item Portafolio:</label>
+                                <input type="text" name="third_port_link" class="form-control" id="third_port_link">
+                            </div>
 
                             <!-- First Portfolio-Item Image -->
-                            <label>Imagen del primero portafolio</label>
-                            <img class="img-fluid d-flex justify-content-center" id="first_show_port_img" src="">
-                            <input type="file" name="first_port_img" class="form-control" id="first_port_img"
-                                value="hey">
+                            <div class="form-group">
+                                <label>Imagen Primer Item Portafolio:</label>
+                                <img class="img-fluid d-flex justify-content-center" id="first_show_port_img" src="">
+                                <input type="file" name="first_port_img" class="form-control" id="first_port_img">
+                            </div>
 
                             <!-- Second Portfolio-Item Image -->
-                            <label>Imagen del segundo portafolio</label>
-                            <img class="img-fluid d-flex justify-content-center" id="sec_show_port_img" src="">
-                            <input type="file" name="sec_port_img" class="form-control" id="sec_port_img">
+                            <div class="form-group">
+                                <label>Imagen Segundo Item Portafolio:</label>
+                                <img class="img-fluid d-flex justify-content-center" id="sec_show_port_img" src="">
+                                <input type="file" name="sec_port_img" class="form-control" id="sec_port_img">
+                            </div>
 
                             <!-- Third Portfolio-Item Image -->
-                            <label>Imagen del tercer portafolio</label>
-                            <img class="img-fluid d-flex justify-content-center" id="third_show_port_img" src="">
-                            <input type="file" name="third_port_img" class="form-control" id="third_port_img">
+                            <div class="form-group">
+                                <label>Imagen Tercer Item Portafolio:</label>
+                                <img class="img-fluid d-flex justify-content-center" id="third_show_port_img" src="">
+                                <input type="file" name="third_port_img" class="form-control" id="third_port_img">
+                            </div>
+
                         </div>
                         <div class="card-footer">
 
@@ -275,7 +328,7 @@
 
     <!-- Script Load -->
     <script src="../js/Load.js"></script>
-    
+
 </body>
 
 </html>

@@ -2,6 +2,18 @@ $(document).ready(function () {
 
     alertify.set('notifier', 'position', 'top-center');
 
+    $('#btn_close_session').click(() => {
+        $.get('../php/close_session.php', (res) => {
+            console.log(res);
+            if (res == '1') {
+                alertify.success('¡Hasta Luego!');
+                window.location = '../index.html';
+            } else {
+                alertify.error('¡No se pudo cerrar la sesion!');
+            }
+        });
+    });
+
     $.get('../php/load_content.php', 'aplication/json', (res) => {
 
         if (res === "403") {
@@ -26,8 +38,37 @@ $(document).ready(function () {
         $('#social_media_link_whatsapp').val(social_media_links['Whatsapp']);
 
         /* Services Section */
-        
+        let services_descriptions = JSON.parse(content['services_description']);
+        $('#service_accounting').val(services_descriptions['Contabilidad']);
+        $('#service_administration').val(services_descriptions['Administracion']);
+        $('#service_recruitment').val(services_descriptions['Reclutamiento']);
 
+        /* Portfolio Section */
+        let portfolio_titles = JSON.parse(content['portfolio_titles']);
+        $('#first_port_title').val(portfolio_titles['F_title']);
+        $('#sec_port_title').val(portfolio_titles['S_title']);
+        $('#third_port_title').val(portfolio_titles['T_title']);
+        let portfolio_subtitles = JSON.parse(content['portfolio_subtitles']);
+        $('#first_port_subtitle').val(portfolio_subtitles['F_sub']);
+        $('#sec_port_subtitle').val(portfolio_subtitles['S_sub']);
+        $('#third_port_subtitle').val(portfolio_subtitles['T_sub']);
+        let portfolio_descriptions = JSON.parse(content['portfolio_descriptions']);
+        $('#first_port_description').val(portfolio_descriptions['F_des']);
+        $('#sec_port_description').val(portfolio_descriptions['S_des']);
+        $('#third_port_description').val(portfolio_descriptions['T_des']);
+        let portfolio_links = JSON.parse(content['portfolio_links']);
+        $('#first_port_link').val(portfolio_links['F_link']);
+        $('#sec_port_link').val(portfolio_links['S_link']);
+        $('#third_port_link').val(portfolio_links['T_link']);
+
+        let portfolio_image_type_1 = JSON.parse(content['portfolio_image_type_1']);
+        let portfolio_image_type_2 = JSON.parse(content['portfolio_image_type_2']);
+        let portfolio_image_type_3 = JSON.parse(content['portfolio_image_type_3']);
+        $('$first_show_port_img').attr('src', 'data:' + portfolio_image_type_1['Type'] + ';base64,' + portfolio_image_file_1);
+
+        let portfolio_image_file_1 = content['portfolio_image_file_1'];
+        let portfolio_image_file_2 = content['portfolio_image_file_2'];
+        let portfolio_image_file_3 = content['portfolio_image_file_3'];
 
 
         /* let about_img_name_type = content[3];

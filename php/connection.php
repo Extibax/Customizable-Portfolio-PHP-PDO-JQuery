@@ -26,6 +26,7 @@ try {
   } else {
     echo "<br>Connection is wrong</br>";
   } */
+  
 } catch (PDOException $e) {
   echo "Error: " . $e->getMessage() . "<br>";
 }

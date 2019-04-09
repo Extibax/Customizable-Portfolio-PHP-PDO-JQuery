@@ -551,7 +551,12 @@ input[type="submit"]:hover {
 
 /* Media Queries */
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 920px) {
+
+    .portfolio-img {
+        min-width: 50vw;
+    }
+
     .nav-link {
         font-size: 2rem;
     }

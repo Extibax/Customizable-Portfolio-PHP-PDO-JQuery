@@ -59,7 +59,9 @@ if (isset($_POST['submit'])) {
             $portfolio_image_3 = file_get_contents($img_3['tmp_name'])
         );
 
-        $dbh = new PDO("mysql:host=localhost;dbname=eam_consultores", "root", "");
+        var_dump($variables);
+
+        /* $dbh = new PDO("mysql:host=localhost;dbname=eam_consultores", "root", "");
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
         $stmt = $dbh->prepare("INSERT INTO content VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) WHERE ID = 1");
         $index = 1;
@@ -67,7 +69,7 @@ if (isset($_POST['submit'])) {
             $stmt->bindValue($index, $variable);
             $index++;
         }
-        echo $stmt->execute() ? "Succes" : "Error: " . $stmt->errorInfo();
+        echo $stmt->execute() ? "Succes" : "Error: " . $stmt->errorInfo(); */
     } catch (PDOException $e) {
         print "Error: " . $e->getMessage();
     }
@@ -88,9 +90,9 @@ if (isset($_POST['submit'])) {
 
 <body>
     <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="img_1">
-        <!-- <input type="file" name="img_2">
-        <input type="file" name="img_3"> -->
+        <!-- <input type="file" name="img_1">
+        <input type="file" name="img_2"> -->
+        <input type="file" name="img_3">
         <input type="submit" name="submit" value="Send">
     </form>
     <br><br>
@@ -106,6 +108,7 @@ if (isset($_POST['submit'])) {
         echo '<img src="data:image/png;base64,'.base64_encode($image_1).'">';
         echo '<img src="data:image/png;base64,'.base64_encode($image_2).'">';
         echo '<img src="data:image/png;base64,'.base64_encode($image_3).'">';
+        Hey Juan!
     } */
     ?>
 </body>

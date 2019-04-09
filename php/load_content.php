@@ -20,8 +20,7 @@ if (isset($_SESSION['User']) && $_SESSION['User']['First_name'] == "Esther") {
         $result['portfolio_image_1'] = base64_encode($result['portfolio_image_1']);
         $result['portfolio_image_2'] = base64_encode($result['portfolio_image_2']);
         $result['portfolio_image_3'] = base64_encode($result['portfolio_image_3']);
-        /* $json_content = json_encode($result, 512); */
-        $json_content = json_encode(array_values($result), 512);
+        $json_content = json_encode($result, 512);
 
         if ($json_content) {
             echo $json_content;

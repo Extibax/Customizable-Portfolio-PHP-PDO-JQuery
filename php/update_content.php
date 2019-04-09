@@ -123,30 +123,30 @@ switch ($_GET['section']) {
                 "T_link" => $third_port_link,
             ));
 
-            $portfolio_file_image_1 = !empty($_FILES['portfolio_image_1']) ? $_FILES['portfolio_image_1'] : false;
+            /* $portfolio_file_image_1 = !empty($_FILES['portfolio_image_1']) ? $_FILES['portfolio_image_1'] : false;
             $portfolio_file_image_2 = !empty($_FILES['portfolio_image_2']) ? $_FILES['portfolio_image_2'] : false;
-            $portfolio_file_image_3 = !empty($_FILES['portfolio_image_3']) ? $_FILES['portfolio_image_3'] : false;
+            $portfolio_file_image_3 = !empty($_FILES['portfolio_image_3']) ? $_FILES['portfolio_image_3'] : false; */
 
-            if ($portfolio_file_image_1) {
+            /* if ($portfolio_file_image_1) {
                 echo "True";
             } else {
                 echo "False";
-            }
+            } */
 
-            $portfolio_file_image_1 ? $portfolio_image_1 = file_get_contents($portfolio_file_image_1['tmp_name']) : false;
+            /* $portfolio_file_image_1 ? $portfolio_image_1 = file_get_contents($portfolio_file_image_1['tmp_name']) : false;
             $portfolio_file_image_2 ? $portfolio_image_2 = file_get_contents($portfolio_file_image_2['tmp_name']) : false;
-            $portfolio_file_image_3 ? $portfolio_image_3 = file_get_contents($portfolio_file_image_3['tmp_name']) : false;
+            $portfolio_file_image_3 ? $portfolio_image_3 = file_get_contents($portfolio_file_image_3['tmp_name']) : false; */
 
             $query = "UPDATE content SET portfolio_titles = ?, portfolio_subtitles = ?, portfolio_descriptions = ?, portfolio_links = ?  ";
 
-            $query .= $portfolio_image_1 ? ",portfolio_image_1 = :img_1 " : "";
+            /* $query .= $portfolio_image_1 ? ",portfolio_image_1 = :img_1 " : "";
             $query .= $portfolio_image_2 ? ",portfolio_image_2 = :img_2 " : "";
             $query .= $portfolio_image_3 ? ",portfolio_image_3 = :img_3 " : "";
 
             $query .= $portfolio_image_1 ? ",portfolio_image_type_1 = :img_type_1 " : "";
             $query .= $portfolio_image_2 ? ",portfolio_image_type_2 = :img_type_2 " : "";
             $query .= $portfolio_image_3 ? ",portfolio_image_type_3 = :img_type_3 " : "";
-
+ */
             $query .= "WHERE ID = 1;";
             echo $query;
             $stmt = $dbh->prepare($query);
@@ -156,38 +156,49 @@ switch ($_GET['section']) {
             $stmt->bindValue(3, $portfolio_descriptions);
             $stmt->bindValue(4, $portfolio_links);
 
-            strpos($query, "portfolio_image_1") ? $stmt->bindValue(":img_1", $portfolio_image_1) : "";
+            /* strpos($query, "portfolio_image_1") ? $stmt->bindValue(":img_1", $portfolio_image_1) : "";
 
             strpos($query, "portfolio_image_2") ? $stmt->bindValue(":img_2", $portfolio_image_2) : "";
 
-            strpos($query, "portfolio_image_3") ? $stmt->bindValue(":img_3", $portfolio_image_3) : "";
+            strpos($query, "portfolio_image_3") ? $stmt->bindValue(":img_3", $portfolio_image_3) : ""; */
 
-            if (strpos($query, "portfolio_image_type_1")) {
+            /* if (strpos($query, "portfolio_image_1")) {
+                echo "Strpos return true";
+            } else {
+                echo "Strpos return false";
+            } */
+            /* if (strpos($query, "portfolio_image_type_1")) {
                 $portfolio_image_type_1 = json_encode(array(
                     "Name" => $portfolio_file_image_1['name'],
                     "Type" => $portfolio_file_image_1['type']
                 ));
 
                 $stmt->bindValue(":img_type_1", $portfolio_image_type_1);
-            }
-            if (strpos($query, "portfolio_image_type_2")) {
+            } else {
+                echo "Return false 1";
+            } */
+            /* if (strpos($query, "portfolio_image_type_2")) {
                 $portfolio_image_type_2 = json_encode(array(
                     "Name" => $portfolio_file_image_2['name'],
                     "Type" => $portfolio_file_image_2['type']
                 ));
 
                 $stmt->bindValue(":img_type_2", $portfolio_image_type_2);
-            }
-            if (strpos($query, "portfolio_image_type_3")) {
+            } else {
+                echo "Return false 2";
+            } */
+            /* if (strpos($query, "portfolio_image_type_3")) {
                 $portfolio_image_type_3 = json_encode(array(
                     "Name" => $portfolio_file_image_3['name'],
                     "Type" => $portfolio_file_image_3['type']
                 ));
 
                 $stmt->bindValue(":img_type_3", $portfolio_image_type_3);
-            }
+            } else {
+                echo "Return false 3";
+            } */
 
-            $stmt->execute();
+            echo $stmt->execute() ? "Success" : "Error: " . $stmt->errorInfo();
 
             /* echo $stmt->execute() ? (strpos($query, 'portfolio_image') ? "01" : "1") : "0"; */
         }

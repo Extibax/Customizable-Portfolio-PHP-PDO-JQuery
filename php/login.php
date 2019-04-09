@@ -1,9 +1,4 @@
 <?php
-/* require_once 'connection.php';
-$password = password_hash('sebas20', PASSWORD_BCRYPT, ['cost'=>4]);
-$query = "INSERT INTO users VALUES (null, 'Esther', 'Avila', 'esther@gmail.com', '$password', null)";
-$result = mysqli_query($connection, $query);
-echo $result ? 'Success' : 'Failed'; */
 
 session_start();
 

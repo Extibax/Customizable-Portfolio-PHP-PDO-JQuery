@@ -2,7 +2,7 @@ $(document).ready(function () {
 
     $.get('../php/login.php', function (res) {
         if (res == 1) {
-            window.location = '../views/admin_view.html';
+            window.location = '../views/admin.html';
         } else {
             console.log("Please login");
         }
@@ -18,7 +18,7 @@ $(document).ready(function () {
 
         $.post('../php/login.php', login_data, function (res) {
             if (res == 1) {
-                window.location = '../views/admin_view.html';
+                window.location = '../views/admin.html';
             } else {
                 console.log('Error al iniciar sesion: ' + res);
             }

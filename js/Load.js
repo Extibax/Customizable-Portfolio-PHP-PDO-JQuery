@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
     alertify.set('notifier', 'position', 'top-center');
+    $('#textarea_about_description').Editor();
 
     $('#btn_close_session').click(() => {
         $.get('../php/close_session.php', (res) => {

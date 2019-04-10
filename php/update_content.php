@@ -140,6 +140,8 @@ if (isset($_SESSION['User'])) {
 
                 $query = "UPDATE content SET portfolio_titles = ?, portfolio_subtitles = ?, portfolio_descriptions = ?, portfolio_links = ?  ";
 
+                //TODO: Dividir el update & load de este archivo en otro mas;
+
                 /* $query .= $portfolio_image_1 ? ",portfolio_image_1 = :img_1 " : "";
                 $query .= $portfolio_image_2 ? ",portfolio_image_2 = :img_2 " : "";
                 $query .= $portfolio_image_3 ? ",portfolio_image_3 = :img_3 " : "";

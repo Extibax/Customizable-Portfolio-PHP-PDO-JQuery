@@ -23,8 +23,7 @@ body {
     font-family: 'Roboto', sans-serif;
     width: 100%;
     height: 100%;
-    background: url('../../public/img/EamBlurBg.jpg')
-    no-repeat center fixed;
+    background: url('../../public/img/EamBlurBg.jpg') no-repeat center fixed;
     background-size: cover;
 }
 
@@ -312,6 +311,10 @@ li {
     flex: 1;
 }
 
+green {
+    color: #5b7c1b;
+}
+
 .social-media {
     margin-top: 5rem;
 }
@@ -515,7 +518,7 @@ input[type="submit"]:hover {
 }
 
 .copyright a {
-    color:#FFF;
+    color: #FFF;
 }
 
 .copyright a:hover {
@@ -553,6 +556,10 @@ input[type="submit"]:hover {
 
 @media screen and (max-width: 920px) {
 
+    .profile-img {
+        min-width: 40vw;
+    }
+
     .portfolio-img {
         min-width: 50vw;
     }
@@ -562,30 +569,21 @@ input[type="submit"]:hover {
     }
 }
 
-@media screen and (max-width: 768px) {
-    
-    .landing-text h1 {
-        font-size: 8rem;
-    }
-
-    .landing-text h6 {
-        font-size: 1.5rem;
-    }
-
-    .nav-list {
+@media screen and (max-width: 855px) {
+    .about .container {
         flex-direction: column;
-    }
-
-    li {
-        margin: 2rem 0;
-    }
-
-    .nav-link {
-        font-size: 4rem;
     }
 
     .about-heading {
         margin-bottom: 1rem;
+    }
+
+    .profile-img {
+        margin: 0 0 7rem 0;
+    }
+
+    .profile-img img {
+        width: 90vw;
     }
 
     .about-heading h1 {
@@ -606,6 +604,29 @@ input[type="submit"]:hover {
 
     .about-details li {
         margin: 0 2rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .landing-text h1 {
+        font-size: 8rem;
+    }
+
+    .landing-text h6 {
+        font-size: 1.5rem;
+    }
+
+    .nav-list {
+        flex-direction: column;
+    }
+
+    li {
+        margin: 2rem 0;
+    }
+
+    .nav-link {
+        font-size: 4rem;
     }
 
     .icon-container {
@@ -638,20 +659,8 @@ input[type="submit"]:hover {
         font-size: 1.5rem;
     }
 
-    .about .container {
-        flex-direction: column;
-    }
-
     .about-heading h1 {
         font-size: 5rem;
-    }
-
-    .profile-img {
-        margin: 0 0 7rem 0;
-    }
-    
-    .profile-img img {
-        width: 90vw;
     }
 
     .portfolio-item {

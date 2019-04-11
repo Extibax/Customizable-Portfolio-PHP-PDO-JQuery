@@ -20,8 +20,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
         integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
-    <!-- Link suyati/line-control CSS -->
-    <link type="text/css" rel="stylesheet" href="../lib/line-control-master/editor.css">
+    <!-- Link Theme Text Editor quilljs -->
+    <link rel="stylesheet" href="../lib/quill/quill.snow.css">
 
     <!-- Link CSS -->
     <link rel="stylesheet" href="style/admin.css">
@@ -100,8 +100,8 @@
                         <!-- About Image -->
                         <div class="form-group">
                             <label>Imagen</label>
-                            <img class="img-fluid" id="src_about_img" src="">
-                            <input type="file" name="image" class="form-control mb-3" id="input_about_img">
+                            <img class="img-fluid" id="show_about_image_1" src="">
+                            <input type="file" name="image" class="form-control mb-3" id="input_about_img_file_1">
                         </div>
 
                         <!-- About Description -->
@@ -109,7 +109,9 @@
                             <label>Descripcion</label>
                             <!-- <textarea class="form-control" id="textarea_about_description" cols="40"
                                 rows="15"></textarea> -->
-                            <input type="text" id="textarea_about_description">
+                            <div id="textarea_about_description">
+                                <p>Hello World</p>
+                            </div>
                         </div>
 
                         <!-- Facebook Link -->
@@ -261,7 +263,7 @@
                             <div class="form-group">
                                 <label>Descripcion Tercer Item Portafolio:</label>
                                 <input type="text" name="thrid_port_description" class="form-control"
-                                    id="thrid_port_description">
+                                    id="third_port_description">
                             </div>
 
                             <!-- First Portfolio-Item Link -->
@@ -285,22 +287,25 @@
                             <!-- First Portfolio-Item Image -->
                             <div class="form-group">
                                 <label>Imagen Primer Item Portafolio:</label>
-                                <img class="img-fluid d-flex justify-content-center" id="first_show_port_img" src="">
-                                <input type="file" name="first_port_img" class="form-control" id="first_port_img">
+                                <img class="img-fluid d-flex justify-content-center" id="show_portfolio_image_1" src="">
+                                <input type="file" name="first_port_img" class="form-control"
+                                    id="input_portfolio_image_file_1">
                             </div>
 
                             <!-- Second Portfolio-Item Image -->
                             <div class="form-group">
                                 <label>Imagen Segundo Item Portafolio:</label>
-                                <img class="img-fluid d-flex justify-content-center" id="sec_show_port_img" src="">
-                                <input type="file" name="sec_port_img" class="form-control" id="sec_port_img">
+                                <img class="img-fluid d-flex justify-content-center" id="show_portfolio_image_2" src="">
+                                <input type="file" name="sec_port_img" class="form-control"
+                                    id="input_portfolio_image_file_2">
                             </div>
 
                             <!-- Third Portfolio-Item Image -->
                             <div class="form-group">
                                 <label>Imagen Tercer Item Portafolio:</label>
-                                <img class="img-fluid d-flex justify-content-center" id="third_show_port_img" src="">
-                                <input type="file" name="third_port_img" class="form-control" id="third_port_img">
+                                <img class="img-fluid d-flex justify-content-center" id="show_portfolio_image_3" src="">
+                                <input type="file" name="third_port_img" class="form-control"
+                                    id="input_portfolio_image_file_3">
                             </div>
 
                         </div>
@@ -334,11 +339,14 @@
     <!-- Script AlertifyJs -->
     <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.11.2/build/alertify.min.js"></script>
 
-    <!-- Script suyati/line-control -->
-    <script src="../lib/line-control-master/editor.js"></script>
+    <!-- Script quilljs -->
+    <script src="../lib/quill/quill.min.js"></script>
 
-    <!-- Script Load -->
+    <!-- Script Load Data -->
     <script src="../js/Load.js"></script>
+
+    <!-- Script Update Data -->
+    <script src="../js/Update.js"></script>
 
 </body>
 

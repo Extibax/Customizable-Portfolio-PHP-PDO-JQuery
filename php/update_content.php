@@ -5,22 +5,35 @@ session_start();
 require 'connection.php';
 
 if (isset($_SESSION['User'])) {
+
     switch ($_GET['section']) {
+
+        /* Landing Section */
         case 'landing':
+
             if (isset($_POST['landing_subtitle'])) {
+
                 $landing_subtitle = !empty($_POST['landing_subtitle']) ? $_POST['landing_subtitle'] : false;
+
                 if ($landing_subtitle) {
+
                     $stmt = $dbh->prepare("UPDATE content SET landing_subtitle = ? WHERE ID = ?");
+
                     $stmt->bindValue(1, $landing_subtitle);
                     $stmt->bindValue(2, $_SESSION['User']['ID']);
+
                     echo $stmt->execute() ? "1" : $stmt->errorInfo();
+
                 } else {
                     echo "0";
                 }
             }
+
             break;
 
+        /* About Section */
         case 'about':
+
             if (isset($_POST['about_description'])) {
 
                 $image_file = !empty($_FILES['about_img']) ? $_FILES['about_img'] : false;
@@ -33,6 +46,7 @@ if (isset($_SESSION['User'])) {
 
 
                 if ($image_file) {
+
                     $about_img = file_get_contents($image_file['tmp_name']);
                     $about_img_name_type = json_encode(array(
                         "About_img" => array(
@@ -45,35 +59,49 @@ if (isset($_SESSION['User'])) {
                         "UPDATE content SET about_img_name_type = ?, about_description = ?, social_media_links = ?, about_img = ? WHERE ID = ?";
 
                     $stmt = $dbh->prepare($query);
+
                     $stmt->bindValue(1, $about_img_name_type);
                     $stmt->bindValue(2, $about_description);
                     $stmt->bindValue(3, $social_media_links);
                     $stmt->bindValue(4, $about_img);
                     $stmt->bindValue(5, $_SESSION['User']['ID']);
+
                     echo $stmt->execute() ? "01" : $stmt->errorInfo();
+
                 } else {
+
                     $query =
                         "UPDATE content SET about_description = ?, social_media_links = ? WHERE ID = ?";
 
                     $stmt = $dbh->prepare($query);
+
                     $stmt->bindValue(1, $about_description);
                     $stmt->bindValue(2, $social_media_links);
                     $stmt->bindValue(3, $_SESSION['User']['ID']);
+
                     echo $stmt->execute() ? "1" : $stmt->errorInfo();
                 }
             }
+
             break;
 
+        /* Service Section */
         case 'services':
+
             if (isset($_POST['services'])) {
+
                 $services = json_encode($_POST['services']);
 
                 $stmt = $dbh->prepare("UPDATE content SET services_description = ?");
                 $stmt->bindValue(1, $services);
+                
                 echo $stmt->execute() ? "1" : $stmt->errorInfo();
+
             }
+
             break;
-            /* Porfolio Section */
+
+        /* Porfolio Section */
         case 'portfolio':
             if (isset($_POST)) {
 
@@ -124,34 +152,28 @@ if (isset($_SESSION['User'])) {
                     "T_link" => $third_port_link,
                 ));
 
-                /* $portfolio_file_image_1 = !empty($_FILES['portfolio_image_1']) ? $_FILES['portfolio_image_1'] : false;
-                $portfolio_file_image_2 = !empty($_FILES['portfolio_image_2']) ? $_FILES['portfolio_image_2'] : false;
-                $portfolio_file_image_3 = !empty($_FILES['portfolio_image_3']) ? $_FILES['portfolio_image_3'] : false; */
+                $portfolio_image_1 = !empty($_FILES['portfolio_image_1']) ? $_FILES['portfolio_image_1'] : false;
+                $portfolio_image_2 = !empty($_FILES['portfolio_image_2']) ? $_FILES['portfolio_image_2'] : false;
+                $portfolio_image_3 = !empty($_FILES['portfolio_image_3']) ? $_FILES['portfolio_image_3'] : false;
 
-                /* if ($portfolio_file_image_1) {
-                    echo "True";
-                } else {
-                    echo "False";
-                } */
-
-                /* $portfolio_file_image_1 ? $portfolio_image_1 = file_get_contents($portfolio_file_image_1['tmp_name']) : false;
-                $portfolio_file_image_2 ? $portfolio_image_2 = file_get_contents($portfolio_file_image_2['tmp_name']) : false;
-                $portfolio_file_image_3 ? $portfolio_image_3 = file_get_contents($portfolio_file_image_3['tmp_name']) : false; */
+                $portfolio_image_1 ? $portfolio_image_file_1 = file_get_contents($portfolio_file_image_1['tmp_name']) : false;
+                $portfolio_image_2 ? $portfolio_image_file_2 = file_get_contents($portfolio_file_image_2['tmp_name']) : false;
+                $portfolio_image_3 ? $portfolio_image_file_3 = file_get_contents($portfolio_file_image_3['tmp_name']) : false;
 
                 $query = "UPDATE content SET portfolio_titles = ?, portfolio_subtitles = ?, portfolio_descriptions = ?, portfolio_links = ?  ";
 
-                //TODO: Dividir el update & load de este archivo en otro mas;
-
-                /* $query .= $portfolio_image_1 ? ",portfolio_image_1 = :img_1 " : "";
+                $query .= $portfolio_image_1 ? ",portfolio_image_1 = :img_1 " : "";
                 $query .= $portfolio_image_2 ? ",portfolio_image_2 = :img_2 " : "";
                 $query .= $portfolio_image_3 ? ",portfolio_image_3 = :img_3 " : "";
     
                 $query .= $portfolio_image_1 ? ",portfolio_image_type_1 = :img_type_1 " : "";
                 $query .= $portfolio_image_2 ? ",portfolio_image_type_2 = :img_type_2 " : "";
                 $query .= $portfolio_image_3 ? ",portfolio_image_type_3 = :img_type_3 " : "";
-     */
+    
                 $query .= "WHERE ID = 1;";
+
                 echo $query;
+                
                 $stmt = $dbh->prepare($query);
 
                 $stmt->bindValue(1, $portfolio_titles);
@@ -159,17 +181,14 @@ if (isset($_SESSION['User'])) {
                 $stmt->bindValue(3, $portfolio_descriptions);
                 $stmt->bindValue(4, $portfolio_links);
 
-                /* strpos($query, "portfolio_image_1") ? $stmt->bindValue(":img_1", $portfolio_image_1) : "";
+                /* TODO: Analizar correctamente este codigo */
+
+                strpos($query, "portfolio_image_1") ? $stmt->bindValue(":img_1", $portfolio_image_1) : "";
     
                 strpos($query, "portfolio_image_2") ? $stmt->bindValue(":img_2", $portfolio_image_2) : "";
     
-                strpos($query, "portfolio_image_3") ? $stmt->bindValue(":img_3", $portfolio_image_3) : ""; */
+                strpos($query, "portfolio_image_3") ? $stmt->bindValue(":img_3", $portfolio_image_3) : "";
 
-                /* if (strpos($query, "portfolio_image_1")) {
-                    echo "Strpos return true";
-                } else {
-                    echo "Strpos return false";
-                } */
                 /* if (strpos($query, "portfolio_image_type_1")) {
                     $portfolio_image_type_1 = json_encode(array(
                         "Name" => $portfolio_file_image_1['name'],
@@ -201,7 +220,7 @@ if (isset($_SESSION['User'])) {
                     echo "Return false 3";
                 } */
 
-                echo $stmt->execute() ? "Success" : "Error: " . $stmt->errorInfo();
+                /* echo $stmt->execute() ? "Success" : "Error: " . $stmt->errorInfo(); */
 
                 /* echo $stmt->execute() ? (strpos($query, 'portfolio_image') ? "01" : "1") : "0"; */
             }

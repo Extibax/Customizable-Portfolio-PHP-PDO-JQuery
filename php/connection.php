@@ -20,8 +20,6 @@ try {
     PDO::ATTR_EMULATE_PREPARES => false,
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
   ]);
-
-  echo $dbh ? "Success" : $dbh->errorInfo();
   
 } catch (PDOException $e) {
   echo "Error: " . $e->getMessage() . "<br>";

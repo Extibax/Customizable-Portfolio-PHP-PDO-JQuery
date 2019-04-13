@@ -1,5 +1,10 @@
 <?php
 
+/* In this file the data that will be updated in the Data Base is received */
+
+/* Hize uso del condicional switch, Para que dependiendo de lo que llegue mediante 
+    el metodo GET y se actualize solo por la seccion modificada */
+
 session_start();
 
 require 'connection.php';

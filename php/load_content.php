@@ -1,8 +1,10 @@
 <?php
 
+/* In this file the data is load and is used for the Load.js file */
+
 session_start();
 
-if (isset($_SESSION['User']) && $_SESSION['User']['First_name'] == "Esther") {
+if (isset($_SESSION['User']) && $_SESSION['User']['First_name'] == "Juan") {
 
     require 'connection.php';
 

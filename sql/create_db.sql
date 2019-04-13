@@ -1,7 +1,10 @@
+#The DB is created with UTF 8 encoding
 CREATE DATABASE IF NOT EXISTS eam_consultores CHARACTER SET utf8 COLLATE utf8_unicode_ci;
 
+#The DB created is used
 USE eam_consultores;
 
+#The users table is created here
 CREATE TABLE IF NOT EXISTS users(
   ID          INT(5) UNSIGNED AUTO_INCREMENT NOT NULL,
   First_name  VARCHAR(100) NOT NULL,
@@ -12,6 +15,7 @@ CREATE TABLE IF NOT EXISTS users(
   CONSTRAINT pk_users PRIMARY KEY(ID)
 )ENGINE='InnoDB';
 
+#The content table is created here and is linked to users ID
 CREATE TABLE IF NOT EXISTS content(
   ID                        INT(5) UNSIGNED AUTO_INCREMENT NOT NULL,
   User_id                   INT(5) UNSIGNED NOT NULL,
@@ -34,5 +38,3 @@ CREATE TABLE IF NOT EXISTS content(
   CONSTRAINT pk_content PRIMARY KEY(ID),
   CONSTRAINT fk_content_user FOREIGN KEY(User_id) REFERENCES users(ID)
 )ENGINE='InnoDB';
-
-DROP DATABASE eam_consultores;

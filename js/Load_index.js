@@ -1,14 +1,16 @@
 $(document).ready(function () {
     
+    /* Se pide todo el contenido de la pagina a la Base de datos relacional con MySQL en el lado del servidor */
     $.get('php/load_index.php', 'aplication/json', (res) => {
         
         res = JSON.parse(res);
-        console.log(res);
 
         /* Landing Section */
         $('#landing_subtitle').text(res.landing_subtitle);
 
         /* About Section */
+
+        /* Aqui se carga la imagen de la seccion About */
         let about_image_type_1 = JSON.parse(res.about_image_type_1);
         $('#show_about_image_1').attr('src', 'data:' + about_image_type_1['Type'] + ';base64,' + res.about_image_file_1);
 
@@ -46,6 +48,7 @@ $(document).ready(function () {
         $('#portfolio_second_link').attr('href', portfolio_links.S_link);
         $('#portfolio_third_link').attr('href', portfolio_links.T_link);
 
+        /* Aqui se cargan las imagenes de la seccion Portfolio */
         let portfolio_image_type_1 = JSON.parse(res.portfolio_image_type_1);
         $('#show_portfolio_image_1').attr('src', 'data:' + portfolio_image_type_1['Type'] + ';base64,' + res.portfolio_image_file_1);
 

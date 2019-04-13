@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    /* Si se preciona el btn update_landing se actualizaran los datos de solo esa seccion */
     $('#update_landing').on('click', function (e) {
 
         e.preventDefault();
@@ -27,8 +28,6 @@ $(document).ready(function () {
                      }, 500);
                 });
 
-                
-
             } else {
 
                 swal({
@@ -41,6 +40,7 @@ $(document).ready(function () {
         });
     })
 
+    /* Si se preciona el btn update_about se actualizaran los datos de solo esa seccion */
     $('#update_about').on('click', function (e) {
         
         e.preventDefault();
@@ -99,6 +99,7 @@ $(document).ready(function () {
 
     });
 
+    /* Si se preciona el btn update_services se actualizaran los datos de solo esa seccion */
     $('#update_services').on('click', function (e) {
 
         e.preventDefault();
@@ -143,6 +144,7 @@ $(document).ready(function () {
         });
     });
 
+    /* Si se preciona el btn update_portfolio se actualizaran los datos de solo esa seccion */
     $('#update_portfolio').on('click', function (e) {
 
         e.preventDefault();

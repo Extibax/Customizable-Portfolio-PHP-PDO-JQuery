@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+    /* Se envian los datos introducidos en el login al Servidor */
     function postData() {
         let login_data = {
             Email: $('#input-email').val(),
@@ -25,6 +26,8 @@ $(document).ready(function () {
         });
     }
 
+    /* Si la sesion del usuario aun sigue vigente entonces se saltara el login y 
+        se redirigira directamente a la vista Admin */
     $.get('../php/login.php', function (res) {
         if (res == 1) {
             window.location = '../views/admin.html';
@@ -33,11 +36,13 @@ $(document).ready(function () {
         }
     });
 
+    /* Activa la funcion para mandar los datos del login al servidor */
     $('#btn-login').on('click', function (e) {
         e.preventDefault();
         postData();
     });
 
+    /* Detecta si se presiono la tecla Enter y asi activar la funcion ya mencionada */
     $('#login_form').keypress(function(e) {
         var code = (e.keyCode ? e.keyCode : e.which);
         if (code == 13) {

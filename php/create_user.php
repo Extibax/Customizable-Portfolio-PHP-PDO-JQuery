@@ -1,5 +1,10 @@
 <?php
 
+/* Con este archivo se puede crear usuarios, Pero no lo agregue a la vista 
+    ya que esta pagina no trata de multiples usuarios */
+
+/* La contraseña al ser ingresada, Sera encriptada con PASSWORD_BCRYPT y con un costo de 8 */
+
 require 'connection.php';
 
 if ($_POST['Email'] && $_POST['Password']) {

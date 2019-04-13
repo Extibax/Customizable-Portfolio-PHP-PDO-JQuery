@@ -1,5 +1,7 @@
 <?php
 
+/* User data is loaded and is used for Login.js */
+
 session_start();
 
 if (isset($_POST['Email']) && isset($_POST['Password']) && !isset($_SESSION['User'])) {

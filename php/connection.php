@@ -1,5 +1,7 @@
 <?php
 
+/* Aqui se crea la conexion a la BD con PDO y Dotenv para el control de variables con importantes datos */
+
 if (!isset($_SESSION)) {
   session_start();
 }

@@ -1,13 +1,14 @@
 <?php
 
+/* Con este archivo se inserta el contenido inicial para que la pagina no este vacia en sus inicios */
+
 session_start();
 
 require 'connection.php';
 
-if (/* $_GET['send'] == 'true' && isset($_SESSION['User']) */ true) {
+if (isset($_SESSION['User'])) {
 
-    if (isset($_POST['submit'])/*  && isset($_SESSION['User']) */) {
-        echo '<br>Im preparing to save data<br>';
+    if (isset($_POST['submit'])) {
 
         $about_image_1 = $_FILES['about_image_1'];
 
@@ -96,39 +97,30 @@ if (/* $_GET['send'] == 'true' && isset($_SESSION['User']) */ true) {
             $portoflio_image_file_3 = file_get_contents($portfolio_image_3['tmp_name'])
         );
 
+        /* Return question marks equivalent to length of array data */
         $question_marks = array_map(function () {
             return ", ?";
         }, $content);
 
+        /* Return the question marks reduced to a single string line */
         $question_marks_reduced = ltrim(array_reduce($question_marks, function ($a, $b) {
             return $a . " " . $b;
         }), " ,");
 
+        /* Here the single string line is added to the prepared statement */
         $stmt = $dbh->prepare("INSERT INTO content VALUES ( null, $user_id, $question_marks_reduced )");
 
+        /* And here the array values is bind to the columns */
         array_map(function ($cont, $index) use ($stmt) {
             $stmt->bindValue($index + 1, $cont);
         }, $content, array_keys($content));
 
+        /* After, All this is executed */
         echo $stmt->execute() ? 'Success' : 'Error: ' . $stmt->errorInfo();
     }
 } else {
     header("Location: ../views/login.html");
 }
-
-/* $corp_resp_template = [0.4, 0.2, 0.1];
-$corp_resp = [[0.2, 0.3, 0.5], [0.2, 0.5, 0.7]];
-
-for ($i = 0; $i < count($corp_resp); $i++) {
-
-    $total[$i] = (array_reduce(array_map(function ($x, $y) {
-        return $x * $y;
-    }, $corp_resp[$i], $corp_resp_template), function ($carry, $item) {
-        return $carry += $item;
-    }, 0));
-}
-
-print $total; */
 
 ?>
 
@@ -144,10 +136,23 @@ print $total; */
 
 <body>
     <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="about_image_1">
-        <input type="file" name="portfolio_image_1">
-        <input type="file" name="portfolio_image_2">
-        <input type="file" name="portfolio_image_3">
+        <p>
+            <label>About image 1</label>
+            <input type="file" name="about_image_1">
+        </p>
+        <p>
+            <label>Portfolio image 1</label>
+            <input type="file" name="portfolio_image_1">
+        </p>
+        <p>
+            <label>Portfolio image 2</label>
+            <input type="file" name="portfolio_image_2">
+        </p>
+        <p>
+            <label>Portfolio image 3</label>
+            <input type="file" name="portfolio_image_3">
+        </p>
+
         <input type="submit" name="submit" value="Upload">
     </form>
 </body>

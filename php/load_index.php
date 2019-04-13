@@ -1,5 +1,7 @@
 <?php
 
+/* In this file the data is load and is used for the Load_index.js file */
+
 session_start();
 
 require 'connection.php';

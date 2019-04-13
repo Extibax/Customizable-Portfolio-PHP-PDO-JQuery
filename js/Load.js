@@ -2,6 +2,7 @@ $(document).ready(function () {
 
     alertify.set('notifier', 'position', 'top-center');
 
+    /* Se cierra la sesion al presionar el #btn_close_session */
     $('#btn_close_session').click(() => {
         $.get('../php/close_session.php', (res) => {
 
@@ -14,8 +15,11 @@ $(document).ready(function () {
         });
     });
 
+    /* Se optiene los datos de la Base de datos para cargar la pagina que permite 
+        editar el contenido de la pagina principal */
     $.get('../php/load_content.php', 'aplication/json', (res) => {
 
+        /* Si la respuesta del servidor es 403 entonces se redirigira a loguearse */
         if (res === "403") {
 
             window.location = "../views/login.html";
@@ -35,7 +39,7 @@ $(document).ready(function () {
             /* About Section */
             $('#input_about_description').html(content['about_description']);
 
-            /* Here I actived the lib Quill */
+            /* Aqui se activa la libreria Quill el cual ofrece un editor de texto genial! */
             var quill = new Quill('#input_about_description', {
                 theme: 'snow'
             });
@@ -77,7 +81,7 @@ $(document).ready(function () {
             $('#input_second_portfolio_link').val(portfolio_links['S_link']);
             $('#input_third_portfolio_link').val(portfolio_links['T_link']);
 
-            /* Load Images of About & Portfolio Section */
+            /* Aqui se bajan y cargan las imagenes de la seccion About & Portfolio */
 
             let about_image_file_1 = content['about_image_file_1'];
 

@@ -9,12 +9,6 @@ if (/* $_GET['send'] == 'true' && isset($_SESSION['User']) */ true) {
     if (isset($_POST['submit'])/*  && isset($_SESSION['User']) */) {
         echo '<br>Im preparing to save data<br>';
 
-        $dbh = new PDO('mysql:host=localhost;dbname=eam_consultores', 'root', '', [
-            PDO::ATTR_EMULATE_PREPARES => false,
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-            PDO::ERRMODE_WARNING
-        ]);
-
         $about_image_1 = $_FILES['about_image_1'];
 
         $portfolio_image_1 = $_FILES['portfolio_image_1'];
@@ -38,9 +32,9 @@ if (/* $_GET['send'] == 'true' && isset($_SESSION['User']) */ true) {
             confidencialidad, creatividad y trabajo en equipo',
 
             $social_media_links = json_encode(array(
-                "Facebook" => "facebook.com",
-                "Instagram" => "instagram.com",
-                "Whatsapp" => "whatsapp.com"
+                "Facebook" => "https://www.facebook.com/",
+                "Instagram" => "https://www.instagram.com/",
+                "Whatsapp" => "https://www.whatsapp.com/"
             )),
 
             $services_description = json_encode(array(

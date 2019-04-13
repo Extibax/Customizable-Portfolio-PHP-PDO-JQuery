@@ -1,6 +1,6 @@
 $(document).ready(function () {
     
-    $.get('php/load_content.php', 'aplication/json', (res) => {
+    $.get('php/load_index.php', 'aplication/json', (res) => {
         
         res = JSON.parse(res);
         console.log(res);

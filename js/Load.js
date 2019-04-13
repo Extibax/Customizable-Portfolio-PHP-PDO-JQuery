@@ -10,10 +10,6 @@ $(document).ready(function () {
                 alertify.success('¡Hasta Luego!');
                 window.location = '../index.html';
 
-            } else {
-
-                alertify.error('¡No se pudo cerrar la sesion!');
-
             }
         });
     });

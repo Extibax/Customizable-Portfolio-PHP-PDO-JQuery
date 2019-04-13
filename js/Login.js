@@ -8,9 +8,19 @@ $(document).ready(function () {
 
         $.post('../php/login.php', login_data, function (res) {
             if (res == 1) {
+                swal({
+                    title: "¡Felicidades!",
+                    text: "Has iniciado sesion correctamente",
+                    icon: "success"
+                });
+
                 window.location = '../views/admin.html';
             } else {
-                console.log('Error al iniciar sesion: ' + res);
+                swal({
+                    title: "Error",
+                    text: "Has ingresado el Email o Password incorrecto",
+                    icon: "success"
+                });
             }
         });
     }

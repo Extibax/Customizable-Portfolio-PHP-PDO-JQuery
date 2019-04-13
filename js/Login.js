@@ -20,7 +20,7 @@ $(document).ready(function () {
                 swal({
                     title: "Error",
                     text: "Has ingresado el Email o Password incorrecto",
-                    icon: "success"
+                    icon: "error"
                 });
             }
         });

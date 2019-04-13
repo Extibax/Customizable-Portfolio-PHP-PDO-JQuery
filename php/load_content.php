@@ -31,5 +31,5 @@ if (isset($_SESSION['User']) && $_SESSION['User']['First_name'] == "Juan") {
         die();
     }
 } else {
-    echo $_SESSION['User'] ? "Session user exists" : "403";
+    echo $_SESSION['User'] ? "" : "403";
 }

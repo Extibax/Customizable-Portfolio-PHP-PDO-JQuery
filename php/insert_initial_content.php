@@ -38,9 +38,9 @@ if (/* $_GET['send'] == 'true' && isset($_SESSION['User']) */ true) {
             )),
 
             $services_description = json_encode(array(
-                "Contabilidad" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                "Administracion" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                "Reclutamiento" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit."
+                "F_description" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                "S_description" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                "T_description" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Lorem ipsum dolor sit amet consectetur adipisicing elit."
             )),
 
             $portfolio_titles = json_encode(array(

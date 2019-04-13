@@ -46,11 +46,11 @@ $(document).ready(function () {
             $('#input_social_media_link_whatsapp').val(social_media_links['Whatsapp']);
 
             /* Services Section */
-            let services_descriptions = JSON.parse(content['services_description']);
+            let services_description = JSON.parse(content['services_description']);
 
-            $('#input_service_accounting').val(services_descriptions['F_description']);
-            $('#input_service_administration').val(services_descriptions['S_description']);
-            $('#input_service_recruitment').val(services_descriptions['T_description']);
+            $('#input_service_accounting').val(services_description['F_description']);
+            $('#input_service_administration').val(services_description['S_description']);
+            $('#input_service_recruitment').val(services_description['T_description']);
 
             /* Portfolio Section */
             let portfolio_titles = JSON.parse(content['portfolio_titles']);

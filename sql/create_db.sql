@@ -10,20 +10,29 @@ CREATE TABLE IF NOT EXISTS users(
   Password    TEXT NOT NULL,
   Date        TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   CONSTRAINT pk_users PRIMARY KEY(ID)
-);
+)ENGINE='InnoDB';
 
 CREATE TABLE IF NOT EXISTS content(
   ID                        INT(5) UNSIGNED AUTO_INCREMENT NOT NULL,
-  landing_subtitle          VARCHAR(100),
+  User_id                   INT(5) UNSIGNED NOT NULL,
+  landing_subtitle          VARCHAR(255),
   about_description         TEXT NOT NULL,
-  social_media_links        VARCHAR(255) NOT NULL,
-  service_contabilidad      VARCHAR(150) NOT NULL, 
-  service_administracion    VARCHAR(150) NOT NULL,
-  service_reclutamiento     VARCHAR(150) NOT NULL,
-  portfolio_titles          VARCHAR(255) NOT NULL,
-  portfolio_subtitles       VARCHAR(50) NOT NULL,
-  portfolio_descriptions    VARCHAR(255) NOT NULL,
-  portfolio_links           VARCHAR(255) NOT NULL,
-  portfolio_images          LONGBLOB NOT NULL,
-  CONSTRAINT pk_content PRIMARY KEY(ID)
+  social_media_links        TEXT NOT NULL,
+  services_description      TEXT NOT NULL,
+  portfolio_titles          TEXT NOT NULL,
+  portfolio_subtitles       TEXT NOT NULL,
+  portfolio_descriptions    TEXT NOT NULL,
+  portfolio_links           TEXT NOT NULL,
+  about_image_type_1        TEXT NOT NULL,
+  portfolio_image_type_1    TEXT NOT NULL,
+  portfolio_image_type_2    TEXT NOT NULL,
+  portfolio_image_type_3    TEXT NOT NULL,
+  about_image_file_1        LONGBLOB NOT NULL,
+  portfolio_image_file_1    LONGBLOB NOT NULL,
+  portfolio_image_file_2    LONGBLOB NOT NULL,
+  portfolio_image_file_3    LONGBLOB NOT NULL,
+  CONSTRAINT pk_content PRIMARY KEY(ID),
+  CONSTRAINT fk_content_user FOREIGN KEY(User_id) REFERENCES users(ID)
 )ENGINE='InnoDB';
+
+DROP DATABASE eam_consultores;

@@ -26,7 +26,6 @@ if (isset($_SESSION['User']) && $_SESSION['User']['First_name'] == "Juan") {
         $json_content = json_encode($result, 512);
 
         echo $json_content ? $json_content : json_last_error_msg();
-
     } catch (PDOException $e) {
         echo "Error!: " . $e->getMessage() . "<br>";
         die();

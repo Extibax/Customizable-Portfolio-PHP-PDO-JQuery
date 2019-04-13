@@ -21,13 +21,13 @@ $(document).ready(function () {
     });
 
     /* Oculta el menu al seleccionar algunas de las secciones*/
-    $('.top-nav .nav-link').on('click', function() {
+    $('.top-nav .nav-link').on('click', function () {
         $('.menu-toggler').removeClass('open');
         $('.top-nav').removeClass('open');
     });
 
     /* Se inicia una animacion dirigida a la seccion que se selecciono ir */
-    $('nav a[href*="#"]').on('click', function() {
+    $('nav a[href*="#"]').on('click', function () {
         $('html, body').animate(keyframes = {
             scrollTop: $($(this).attr('href')).offset().top - 40
         }, options = 2000);
@@ -41,7 +41,7 @@ $(document).ready(function () {
     })
 
     /* Up botton, Para subir al top de la pagina al llegar al final */
-    $('#up').on('click', function() {
+    $('#up').on('click', function () {
         $('html, body').animate(keyframes = {
             scrollTop: 0
         }, options = 2000);

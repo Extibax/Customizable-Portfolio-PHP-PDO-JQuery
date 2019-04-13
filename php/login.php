@@ -11,7 +11,6 @@ if (isset($_POST['Email']) && isset($_POST['Password']) && !isset($_SESSION['Use
     $Email = !empty($_POST['Email']) && !is_numeric($_POST['Email']) ? $_POST['Email'] : false;
     $Password = !empty($_POST['Password']) ? $_POST['Password'] : false;
 
-
     if ($Email && $Password) {
         $stmt = $dbh->prepare("SELECT * FROM users WHERE ID = 1 AND Email = '$Email'");
         $stmt->execute();
@@ -24,7 +23,6 @@ if (isset($_POST['Email']) && isset($_POST['Password']) && !isset($_SESSION['Use
             echo "0";
         }
     }
-
 } else if (isset($_SESSION['User'])) {
     echo "1";
 } else {

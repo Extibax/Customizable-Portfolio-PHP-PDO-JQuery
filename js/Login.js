@@ -43,7 +43,7 @@ $(document).ready(function () {
     });
 
     /* Detecta si se presiono la tecla Enter y asi activar la funcion ya mencionada */
-    $('#login_form').keypress(function(e) {
+    $('#login_form').keypress(function (e) {
         var code = (e.keyCode ? e.keyCode : e.which);
         if (code == 13) {
             e.preventDefault();

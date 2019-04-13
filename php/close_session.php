@@ -11,5 +11,3 @@ if (isset($_SESSION['User'])) {
 } else {
     echo '0';
 }
-
-?>

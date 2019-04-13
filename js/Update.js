@@ -1,56 +1,98 @@
 $(document).ready(function () {
+
     $('#update_landing').on('click', function (e) {
+
         e.preventDefault();
 
-        $landing_section = {
-            "landing_subtitle": $('#landing_subtitle').val()
+        let landing_section = {
+            "landing_subtitle": $('#input_landing_subtitle').val(),
+            "landing_submit" : true
         }
 
-        $.post('../php/update_content.php?section=landing', $landing_section, function (res) {
-            if (res == 1) {
-                alertify.success("Se actualizo la seccion del inicio");
-                $('#landing').collapse('hide');
+        $.post('../php/update_content.php?section=landing', { landing_section } , function (res) {
+
+            res = JSON.parse(res);
+
+            if (res.Status) {
+
+                swal({
+                    title: "¡Actualizado con exito!",
+                    text: res.Message,
+                    icon: "success"
+                }).then(function() {
+                    $('#landing').collapse('hide');
+
+                    setTimeout(function(){
+                        window.location.reload(1);
+                     }, 500);
+                });
+
+                
+
             } else {
-                alertify.error('Error al actualizar la seccion del inicio');
+
+                swal({
+                    title: "Error al actualizar",
+                    text: res.Message,
+                    icon: "error"
+                });
+
             }
         });
     })
 
     $('#update_about').on('click', function (e) {
+        
         e.preventDefault();
         let frmData = new FormData;
 
-        let social_media_link_1 = $('#social_media_link_1').val();
-        let social_media_link_2 = $('#social_media_link_2').val();
-        let social_media_link_3 = $('#social_media_link_3').val();
-
-        /* let social_media_links = {
-            "Facebook": social_media_link_1,
-            "Instagram": social_media_link_2,
-            "Whatsapp": social_media_link_3
-        } */
-
-        frmData.append("about_img", $('#input_about_img')[0].files[0]);
-        frmData.append("about_description", $('#about_description').val());
-        frmData.append("facebook", social_media_link_1);
-        frmData.append("instagram", social_media_link_2);
-        frmData.append("whatsapp", social_media_link_3);
+        let input_social_media_link_facebook = $('#input_social_media_link_facebook').val();
+        let input_social_media_link_instagram = $('#input_social_media_link_instagram').val();
+        let input_social_media_link_whatsapp = $('#input_social_media_link_whatsapp').val();
+        
+        $('#input_about_image_content_1').val() ? frmData.append("about_image_content_1", $('#input_about_image_content_1')[0].files[0]) : "";
+        var quill = new Quill('#input_about_description', {
+            theme: 'snow'
+        });
+        frmData.append("about_description", quill.root.innerHTML);
+        frmData.append("facebook", input_social_media_link_facebook);
+        frmData.append("instagram", input_social_media_link_instagram);
+        frmData.append("whatsapp", input_social_media_link_whatsapp);
+        frmData.append("about_submit", true);
 
         $.ajax({
             url: '../php/update_content.php?section=about',
-            type: 'post',
+            type: 'POST',
             data: frmData,
             processData: false,
             contentType: false,
             cache: false,
             success: function (res) {
-                if (res === "1") {
-                    alertify.success("Seccion actualizada correctamente");
-                    $('#about').collapse('hide');
-                } else if (res === "01") {
-                    location.reload(true);
+
+                res = JSON.parse(res);
+
+                if (res.Status) {
+
+                    swal({
+                        title: "¡Actualizado con exito!",
+                        text: res.Message,
+                        icon: "success"
+                    }).then(function() {
+                        $('#about').collapse('hide');
+    
+                        setTimeout(function(){
+                            window.location.reload(1);
+                         }, 500);
+                    });
+    
                 } else {
-                    alertify.error("Error al actualizar la seccion");
+    
+                    swal({
+                        title: "Error al actualizar",
+                        text: res.Message,
+                        icon: "error"
+                    });
+    
                 }
             }
         })
@@ -58,67 +100,109 @@ $(document).ready(function () {
     });
 
     $('#update_services').on('click', function (e) {
+
         e.preventDefault();
 
         let services = {
-            'Contabilidad': $('#service_contabilidad').val(),
-            'Administracion': $('#service_administration').val(),
-            'Reclutamiento': $('#service_recruitment').val()
+            "Contabilidad": $('#input_service_accounting').val(),
+            "Administracion": $('#input_service_administration').val(),
+            "Reclutamiento": $('#input_service_recruitment').val()
         }
 
+        let services_submit = true;
+
         $.post('../php/update_content.php?section=services', {
-            services
+            services, services_submit
         }, function (res) {
-            console.log(res);
-            if (res == "1") {
-                alertify.success('Seccion actualizada correctamente');
-                $('#services').collapse('hide');
+
+            res = JSON.parse(res);
+
+            if (res.Status) {
+
+                swal({
+                    title: "¡Actualizado con exito!",
+                    text: res.Message,
+                    icon: "success"
+                }).then(function() {
+                    $('#services').collapse('hide');
+
+                    setTimeout(function(){
+                        window.location.reload(1);
+                     }, 500);
+                });
+
             } else {
-                alertify.error('Error al actualizar la seccion');
+
+                swal({
+                    title: "Error al actualizar",
+                    text: res.Message,
+                    icon: "error"
+                });
+
             }
         });
     });
 
     $('#update_portfolio').on('click', function (e) {
+
         e.preventDefault();
         let frmData = new FormData;
 
-        frmData.append("first_port_title", $('#first_port_title').val());
-        frmData.append("sec_port_title", $('#sec_port_title').val());
-        frmData.append("third_port_title", $('#third_port_title').val());
+        frmData.append("first_portfolio_title", $('#input_first_portfolio_title').val());
+        frmData.append("second_portfolio_title", $('#input_second_portfolio_title').val());
+        frmData.append("third_portfolio_title", $('#input_third_portfolio_title').val());
 
-        frmData.append("first_port_subtitle", $('#first_port_title').val());
-        frmData.append("sec_port_subtitle", $('#sec_port_title').val());
-        frmData.append("third_port_subtitle", $('#third_port_title').val());
+        frmData.append("first_portfolio_subtitle", $('#input_first_portfolio_subtitle').val());
+        frmData.append("second_portfolio_subtitle", $('#input_second_portfolio_subtitle').val());
+        frmData.append("third_portfolio_subtitle", $('#input_third_portfolio_subtitle').val());
 
-        frmData.append("first_port_description", $('#first_port_description').val());
-        frmData.append("sec_port_description", $('#sec_port_description').val());
-        frmData.append("third_port_description", $('#third_port_description').val());
+        frmData.append("first_portfolio_description", $('#input_first_portfolio_description').val());
+        frmData.append("second_portfolio_description", $('#input_second_portfolio_description').val());
+        frmData.append("third_portfolio_description", $('#input_third_portfolio_description').val());
 
-        frmData.append("first_port_link", $('#first_port_link').val());
-        frmData.append("sec_port_link", $('#sec_port_link').val());
-        frmData.append("third_port_link", $('#third_port_link').val());
+        frmData.append("first_portfolio_link", $('#input_first_portfolio_link').val());
+        frmData.append("second_portfolio_link", $('#input_second_portfolio_link').val());
+        frmData.append("third_portfolio_link", $('#input_third_portfolio_link').val());
 
-        frmData.append("portfolio_image_1", $('#input_portfolio_image_file_1')[0].files[0]);
-        frmData.append("portfolio_image_2", $('#input_portfolio_image_file_2')[0].files[0]);
-        frmData.append("portfolio_image_3", $('#input_portfolio_image_file_3')[0].files[0]);
+        $('#input_portfolio_image_content_1').val() ? frmData.append("portfolio_image_content_1", $('#input_portfolio_image_content_1')[0].files[0]) : "";
+        $('#input_portfolio_image_content_2').val() ? frmData.append("portfolio_image_content_2", $('#input_portfolio_image_content_2')[0].files[0]) : "";
+        $('#input_portfolio_image_content_3').val() ? frmData.append("portfolio_image_content_3", $('#input_portfolio_image_content_3')[0].files[0]) : "";
+
+        frmData.append("portfolio_submit", true);
 
         $.ajax({
             url: '../php/update_content.php?section=portfolio',
-            type: 'post',
+            type: 'POST',
             data: frmData,
             processData: false,
             contentType: false,
             cache: false,
             success: function (res) {
-                console.log(res);
-                if (res === "1") {
-                    alertify.success('Seccion actualizada correctamente');
-                } else if (res === "01") {
-                    alertify.success('Seccion actualizada correctamente');
-                    location.reload(true);
+
+                res = JSON.parse(res);
+
+                if (res.Status) {
+
+                    swal({
+                        title: "¡Actualizado con exito!",
+                        text: res.Message,
+                        icon: "success",
+                    }).then(function() {
+                        $('#portfolio').collapse('hide');
+    
+                        setTimeout(function(){
+                            window.location.reload(1);
+                         }, 500);
+                    });
+    
                 } else {
-                    alertify.error('Error al actualizar la seccion');
+    
+                    swal({
+                        title: "Error al actualizar",
+                        text: res.Message,
+                        icon: "error"
+                    });
+    
                 }
             }
         });

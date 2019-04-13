@@ -30,3 +30,20 @@ try {
 } catch (PDOException $e) {
   echo "Error: " . $e->getMessage() . "<br>";
 }
+
+/* $ID = 1;
+$landing_subtitle = "Contabilidad | Administracion | Reclutamiento";
+$about_description = "Descriptions here";
+
+$query = 'UPDATE content SET `ID` = ?';
+$query .= ', `landing_subtitle` = :landing_subtitle';
+$query .= ', `about_description` = :about_description';
+$query .= ' WHERE ID = 1';
+$stmt = $dbh->prepare("UPDATE content SET `ID` = :ID, `landing_subtitle` = :landing_subtitle");
+$stmt = $dbh->prepare($query);
+
+$stmt->bindValue(1, $ID);
+$stmt->bindValue(':landing_subtitle', $landing_subtitle);
+$stmt->bindValue(':about_description', $about_description);
+
+echo $stmt->execute() ? "Success" : $stmt->errorInfo(); */

@@ -9,7 +9,7 @@ if (isset($_SESSION['User']) && $_SESSION['User']['First_name'] == "Esther") {
     try {
         $ID = $_SESSION['User']['ID'];
         $stmt = $dbh->prepare(
-            "SELECT c.*, u.First_name FROM content c
+            "SELECT c.*, u.First_name AS 'Admin_name' FROM content c
                 INNER JOIN users u ON u.ID = c.User_id
                     WHERE c.User_id = ?"
         );

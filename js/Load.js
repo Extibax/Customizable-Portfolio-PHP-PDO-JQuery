@@ -26,11 +26,7 @@ $(document).ready(function () {
 
         } else {
 
-            console.log(res);
-
             let content = JSON.parse(res);
-
-            console.log(content);
 
             /* Title Admin Page */
             $('#admin_name').text("Bienvenid@: " + content['Admin_name']);

@@ -23,14 +23,7 @@ if (isset($_SESSION['User'])) {
         $content = array(
             $landing_subtitle = "Contabilidad | Administracion | Reclutamiento",
 
-            $about_description = 'Somos un equipo de profesionales, nuestro objetivo primordial es brindar <b>"una solucion integral"</b> de
-            calidad que optimice la <b>eficiencia</b> y productividad de tu negocio, ofreciendo servicios en manejo de
-            <b>Talento Humano</b>, <b>Outsourcing de planilla</b>, <b>Contabilidad administrativa</b>, <b>Contabilidad Financiera</b>,
-            <b>Contabilidad Tributaria</b> entre otros que nos convierten en un verdadero centro de operaciones
-            empresariales.
-            <br><br>
-            Ponemos a disposicion todos estos servicios, producto de nuestro compromiso, seriedad,
-            confidencialidad, creatividad y trabajo en equipo',
+            $about_description = '<p>Somos un equipo de profesionales, nuestro objetivo primordial es brindar "una solucion integral" de calidad que optimice la eficiencia y productividad de tu negocio, ofreciendo servicios en manejo de Talento Humano, Outsourcing de planilla, Contabilidad administrativa, Contabilidad Financiera, Contabilidad Tributariaentre otros que nos convierten en un verdadero centro de operaciones empresariales.&nbsp;</p><p><br></p><p>Ponemos a disposicion todos estos servicios, producto de nuestro compromiso, seriedad, confidencialidad, creatividad y trabajo en equipo&nbsp;</p><p><br></p><p><strong>Horario de atencion:</strong> De Lunes a Sabado: 8:00 AM hasta 5:00 PM</p>',
 
             $social_media_links = json_encode(array(
                 "Facebook" => "https://www.facebook.com/",

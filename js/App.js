@@ -2,6 +2,10 @@
 
 $(document).ready(function () {
 
+    $.post('php/close_session.php', function(res) {
+        console.log('Session closed: ' + res);
+    });
+
     let menu_toggler = $('.menu-toggler')[0];
     let sticky = menu_toggler.offsetTop;
 

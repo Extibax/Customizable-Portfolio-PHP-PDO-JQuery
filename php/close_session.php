@@ -6,8 +6,8 @@ session_start();
 
 if (isset($_SESSION['User'])) {
     unset($_SESSION['User']);
-    echo '1';
     session_destroy();
+    echo '1';
 } else {
     echo '0';
 }

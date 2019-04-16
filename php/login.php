@@ -2,7 +2,9 @@
 
 /* User data is loaded and is used for Login.js */
 
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 
 if (isset($_POST['Email']) && isset($_POST['Password']) && !isset($_SESSION['User'])) {
 
@@ -17,6 +19,7 @@ if (isset($_POST['Email']) && isset($_POST['Password']) && !isset($_SESSION['Use
         $User = $stmt->fetch();
 
         if (password_verify($Password, $User['Password'])) {
+            session_unset();
             $_SESSION['User'] = $User;
             echo "1";
         } else {

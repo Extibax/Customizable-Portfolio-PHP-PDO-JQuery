@@ -2,6 +2,8 @@
 
 $(document).ready(function () {
 
+    /* Con esta funcion cierro las sesiones existentes para no causar problemas
+     con otros projectos del mismo servidor */
     $.post('php/close_session.php', function(res) {
         console.log('Session closed: ' + res);
     });

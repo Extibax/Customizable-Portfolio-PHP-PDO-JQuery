@@ -11,7 +11,7 @@ $(document).ready(function () {
     let menu_toggler = $('.menu-toggler')[0];
     let sticky = menu_toggler.offsetTop;
 
-    /* Hace que el menu toggler button se ancla en la pantalla al empezar a scrollear */
+    /* Hace que el menu toggler button se ancle en la pantalla al empezar a scrollear */
     $(this).scroll(function () {
         if (window.pageYOffset > sticky) {
             menu_toggler.classList.add("sticky");

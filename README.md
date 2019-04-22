@@ -30,7 +30,7 @@ La mayoria de veces yo hago las inserciones a la base de datos especificando par
 ```
 
 
-### Lenguages, Technologies & Libraries Used
+### Languages, Technologies & Libraries Used
 * HTML5
 * CSS3
 * Bootstrap 4.3.1
